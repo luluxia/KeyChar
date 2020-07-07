@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/vue.js"></script>
+  <title>Key Character Birthday Timeline</title>
+</head>
+<body>
+  <div id="app">
+    <div class="logo">
+      <img src="img/key_logo.svg" alt="">
+      <p>Character Birthday Timeline</p>
+    </div>
+    <div class="char">
+      <div class="char-title">
+        <div class="char-name">
+          <p>Furukawa Nagisa</p>
+          <h1>古河 渚</h1>
+        </div>
+        <div class="char-birth">
+          <p>12月24日</p>
+        </div>
+      </div>
+      <div class="char-cg">
+        <div class="char-bg"></div>
+        <div class="char-cover"></div>
+        <img src="img/test.png" alt="">
+      </div>
+      <div class="char-info">
+        <ul>
+          <li>补充信息</li>
+          <li>补充信息</li>
+          <li>补充信息</li>
+        </ul>
+      </div>
+    </div>
+    <div @mousedown="slider_down" @mousemove="slider_move" @mouseup="slider_up" class="slider">
+      <div :style="{transform: 'translate(' + sliderX + 'px ,0)'}" class="slider-content">
+        <ul>
+          <li class="slider-month">7月</li>
+          <li>
+            <div class="slider-icon">
+              <img src="img/test2.png" alt="">
+            </div>
+            <p>20日</p>
+          </li>
+          <li>
+            <div class="slider-icon">
+              <img src="img/test2.png" alt="">
+            </div>
+            <p>20日</p>
+          </li>
+        </ul>
+        <ul>
+          <li class="slider-month">12月</li>
+          <li @click="choose">
+            <div class="slider-icon">
+              <img src="img/test.png" alt="">
+            </div>
+            <p>24日</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

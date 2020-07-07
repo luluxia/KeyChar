@@ -1,0 +1,128 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+*, *::after, *::before{
+  position: relative;
+  box-sizing: border-box;
+}
+html, body, #app{
+  width: 100%;
+  height: 100%;
+}
+#app{
+  color: #333;
+  background: #eee;
+}
+.logo{
+  position: absolute;
+  right: 4em;
+  top: 4em;
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  width: 5em;
+}
+.logo p{
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin-left: 0.5em;
+}
+.char{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 8em);
+  padding: 0 10em;
+}
+.char-title, .char-cg, .char-info{
+  width: calc(100% / 3);
+}
+.char-title{
+  font-size: 1.5em;
+}
+.char-cg{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.char-cg div{
+  position: absolute;
+}
+.char-cg img{
+  width: 30em;
+  height: 30em;
+  object-fit: contain;
+}
+.char-bg{
+  width: 18em;
+  height: 28em;
+  background: #dc3c78;
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.3);
+}
+.char-cover{
+  width: 15em;
+  height: 28em;
+  background: #fff;
+  transform: rotate(12deg);
+  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.3);
+}
+.char-info{
+  text-align: right;
+}
+.char-info li{
+  list-style: none;
+}
+.slider{
+  height: 8em;
+  background-color: #eeeeee;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='20' height='20' fill-opacity='0.6' fill='%23d7d7d7'/%3E%3C/svg%3E");
+  overflow: hidden;
+}
+.slider-content{
+  height: 100%;
+  display: flex;
+  width: fit-content;
+  user-select: none;
+  transition-property: transform;
+}
+.slider-content ul{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.slider-content li{
+  list-style: none;
+  margin: 0 1em;
+}
+.slider-icon{
+  display: flex;
+  justify-content: center;
+  height: 5em;
+  width: 5em;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #888;
+  overflow: hidden;
+}
+.slider-icon img{
+  height: 6em;
+  pointer-events: none;
+}
+.slider-content p{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 0.8em;
+  padding: 0.2em 0.3em;
+  border-radius: 0.2em;
+  background: #888;
+  color: #fff;
+}
+.slider-month{
+  font-weight: bold;
+  font-size: 2em;
+  color: #888;
+}
