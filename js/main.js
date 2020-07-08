@@ -20,6 +20,7 @@ let app = new Vue({
     ],
     sliderMove: 0,
     sliderX: 0,
+    sliderChange: 0,
     pastX: 0,
     mouseX: 0,
     middle: 0,
@@ -27,12 +28,14 @@ let app = new Vue({
   methods: {
     slider_down(event) {
       this.sliderMove = 1
+      this.sliderChange = 0
       this.mouseX = event.clientX
       this.pastX = this.sliderX
     },
     slider_move(event) {
       let changeX
       if(this.sliderMove){
+        this.sliderChange = 1
         changeX = this.mouseX - event.clientX
         this.sliderX = this.pastX - changeX
       }
@@ -51,15 +54,17 @@ let app = new Vue({
         }
       })
       this.sliderX = this.middle - items[target].offsetLeft - itemWidth
-      console.log(items[target].dataset.id)
+      console.log(target + '   ' + this.sliderX)
       this.show.pop()
       this.show.push(this.data[items[target].dataset.id].Name)
     },
     choose(event) {
-      let itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
-      this.sliderX = this.middle - event.currentTarget.offsetLeft - itemWidth
-      this.show.pop()
-      this.show.push(this.data[event.currentTarget.dataset.id].Name)
+      if(!this.sliderChange){
+        let itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
+        this.sliderX = this.middle - event.currentTarget.offsetLeft - itemWidth
+        this.show.pop()
+        this.show.push(this.data[event.currentTarget.dataset.id].Name)
+      }
     }
   },
   mounted() {
