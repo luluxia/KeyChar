@@ -1,6 +1,23 @@
 let app = new Vue({
   el: "#app",
   data: {
+    data: [
+      {
+        Name: ['伊吹风子', '伊吹 風子', 'いぶき ふうこ', 'Ibuki Fuko'],
+        CG: 'test2.png',
+        Mouth: 7,
+        Day: 20
+      },
+      {
+        Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
+        CG: 'test.png',
+        Mouth: 12,
+        Day: 24
+      },
+    ],
+    show: [
+      ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa']
+    ],
     sliderMove: 0,
     sliderX: 0,
     pastX: 0,
@@ -34,10 +51,15 @@ let app = new Vue({
         }
       })
       this.sliderX = this.middle - items[target].offsetLeft - itemWidth
-      console.log(target + '  ' + targetWidth)
+      console.log(items[target].dataset.id)
+      this.show.pop()
+      this.show.push(this.data[items[target].dataset.id].Name)
     },
     choose(event) {
-      console.log(event.currentTarget.clientWidth)
+      let itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
+      this.sliderX = this.middle - event.currentTarget.offsetLeft - itemWidth
+      this.show.pop()
+      this.show.push(this.data[event.currentTarget.dataset.id].Name)
     }
   },
   mounted() {

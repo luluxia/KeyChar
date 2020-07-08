@@ -41,7 +41,25 @@ html, body, #app{
   width: calc(100% / 3);
 }
 .char-title{
-  font-size: 1.5em;
+  height: 10em;
+}
+.char-title-content{
+  height: 10em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+}
+.char-name{
+  width: fit-content;
+  font-size: 3em;
+}
+.char-fullname{
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+.char-fullname p{
+  width: fit-content;
 }
 .char-cg{
   display: flex;
@@ -124,4 +142,41 @@ html, body, #app{
   font-weight: bold;
   font-size: 2em;
   color: #888;
+}
+
+.trans-name::before{
+  content: "";
+  position: absolute;
+  display: block;
+  background: #eee;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
+.test-enter-active, .test-leave-active{
+  position: absolute;
+}
+.test-enter-active{
+  z-index: 1;
+}
+.test-leave-active{
+  z-index: 2;
+}
+.test-enter-active .trans-name::before{
+  opacity: 1;
+  transition: transform 0.5s ease 0.5s;
+}
+.test-leave-active .trans-name::before{
+  opacity: 1;
+  transition: transform 0.5s ease;
+}
+.test-enter .trans-name::before{
+  transform: translate(0, 0);
+}
+.test-enter-to .trans-name::before{
+  transform: translate(100%, 0);
+}
+.test-leave-to .trans-name::before{
+  transform: translate(0, 0);
 }

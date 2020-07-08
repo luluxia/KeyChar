@@ -15,13 +15,16 @@
     </div>
     <div class="char">
       <div class="char-title">
-        <div class="char-name">
-          <p>Furukawa Nagisa</p>
-          <h1>古河 渚</h1>
-        </div>
-        <div class="char-birth">
-          <p>12月24日</p>
-        </div>
+        <transition-group name="test" tag="div" :duration="{ enter: 1000, leave: 500 }">
+          <div v-for="item in show" :key="item[0]" class="char-title-content">
+            <h1 class="char-name trans-name">{{item[0]}}</h1>
+            <div class="char-fullname">
+              <p class="trans-name">{{item[1]}}</p>
+              <p class="trans-name">{{item[2]}}</p>
+              <p class="trans-name">{{item[3]}}</p>
+            </div>
+          </div>
+        </transition-group>
       </div>
       <div class="char-cg">
         <div class="char-bg"></div>
@@ -30,8 +33,7 @@
       </div>
       <div class="char-info">
         <ul>
-          <li>补充信息</li>
-          <li>补充信息</li>
+          <p>12月24日</p>
           <li>补充信息</li>
         </ul>
       </div>
@@ -40,38 +42,38 @@
       <div :style="{transform: 'translate(' + sliderX + 'px ,0)', transition: sliderMove ? '' : 'transform 0.3s'}" class="slider-content">
         <ul>
           <li class="slider-month">7月</li>
-          <li class="slider-item" @click="choose">
+          <li class="slider-item" @click="choose" data-id="0">
             <div class="slider-icon">
               <img src="img/test2.png" alt="">
             </div>
             <p>20日</p>
           </li>
-          <li class="slider-item" @click="choose">
+          <li class="slider-item" @click="choose" data-id="0">
             <div class="slider-icon">
               <img src="img/test2.png" alt="">
             </div>
             <p>20日</p>
           </li>
           <li class="slider-month">12月</li>
-          <li class="slider-item" @click="choose">
+          <li class="slider-item" @click="choose" data-id="1">
             <div class="slider-icon">
               <img src="img/test.png" alt="">
             </div>
             <p>24日</p>
           </li>
-          <li class="slider-item" @click="choose">
+          <li class="slider-item" @click="choose" data-id="1">
             <div class="slider-icon">
               <img src="img/test.png" alt="">
             </div>
             <p>24日</p>
           </li>
-          <li class="slider-item" @click="choose">
+          <li class="slider-item" @click="choose" data-id="1">
             <div class="slider-icon">
               <img src="img/test.png" alt="">
             </div>
             <p>24日</p>
           </li>
-          <li class="slider-item" @click="choose">
+          <li class="slider-item" @click="choose" data-id="1">
             <div class="slider-icon">
               <img src="img/test.png" alt="">
             </div>
