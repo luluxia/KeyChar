@@ -22,9 +22,22 @@ let app = new Vue({
     },
     slider_up() {
       this.sliderMove = 0
+      let items = document.querySelectorAll('.slider-item')
+      let itemWidth = items[0].clientWidth / 2
+      let target = 0
+      let targetWidth = Math.abs(items[0].getBoundingClientRect().left + itemWidth - this.middle)
+      items.forEach((item, index) => {
+        let width = Math.abs(item.getBoundingClientRect().left + itemWidth - this.middle)
+        if(width < targetWidth){
+          target = index
+          targetWidth = width
+        }
+      })
+      this.sliderX = this.middle - items[target].offsetLeft - itemWidth
+      console.log(target + '  ' + targetWidth)
     },
     choose(event) {
-      console.log(event.target.getBoundingClientRect().left)
+      console.log(event.currentTarget.clientWidth)
     }
   },
   mounted() {

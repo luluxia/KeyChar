@@ -37,25 +37,41 @@
       </div>
     </div>
     <div @mousedown="slider_down" @mousemove="slider_move" @mouseup="slider_up" class="slider">
-      <div :style="{transform: 'translate(' + sliderX + 'px ,0)'}" class="slider-content">
+      <div :style="{transform: 'translate(' + sliderX + 'px ,0)', transition: sliderMove ? '' : 'transform 0.3s'}" class="slider-content">
         <ul>
           <li class="slider-month">7月</li>
-          <li>
+          <li class="slider-item" @click="choose">
             <div class="slider-icon">
               <img src="img/test2.png" alt="">
             </div>
             <p>20日</p>
           </li>
-          <li>
+          <li class="slider-item" @click="choose">
             <div class="slider-icon">
               <img src="img/test2.png" alt="">
             </div>
             <p>20日</p>
           </li>
-        </ul>
-        <ul>
           <li class="slider-month">12月</li>
-          <li @click="choose">
+          <li class="slider-item" @click="choose">
+            <div class="slider-icon">
+              <img src="img/test.png" alt="">
+            </div>
+            <p>24日</p>
+          </li>
+          <li class="slider-item" @click="choose">
+            <div class="slider-icon">
+              <img src="img/test.png" alt="">
+            </div>
+            <p>24日</p>
+          </li>
+          <li class="slider-item" @click="choose">
+            <div class="slider-icon">
+              <img src="img/test.png" alt="">
+            </div>
+            <p>24日</p>
+          </li>
+          <li class="slider-item" @click="choose">
             <div class="slider-icon">
               <img src="img/test.png" alt="">
             </div>

@@ -83,7 +83,6 @@ html, body, #app{
 }
 .slider-content{
   height: 100%;
-  display: flex;
   width: fit-content;
   user-select: none;
   transition-property: transform;
