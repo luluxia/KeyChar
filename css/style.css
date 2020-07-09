@@ -16,8 +16,8 @@ html, body, #app{
 }
 .logo{
   position: absolute;
-  right: 4em;
-  top: 4em;
+  right: 2em;
+  top: 2em;
   display: flex;
   align-items: center;
 }
@@ -29,69 +29,76 @@ html, body, #app{
   letter-spacing: 0.1em;
   margin-left: 0.5em;
 }
+.main{
+  display: flex;
+  align-items: center;
+  height: calc(100% - 8em);
+}
+.card{
+  width: 100%;
+  height: 26em;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 20px -15px rgba(0, 0, 0, 0.2);
+}
 .char{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: calc(100% - 8em);
-  padding: 0 10em;
+  width: 55em;
+  height: 100%;
+  margin: 0 auto;
 }
-.char-title, .char-cg, .char-info{
-  width: calc(100% / 3);
+.char-title, .char-cg{
+  width: 50%;
 }
 .char-title{
   height: 10em;
 }
 .char-title-content{
-  height: 10em;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
+  align-items: center;
+}
+.char-month{
+  font-size: 1.2em;
+  margin-bottom: 0.6em;
+  opacity: 0.6;
 }
 .char-name{
   width: fit-content;
   font-size: 3em;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 2px rgba(0,0,0,.1);
+  font-weight: lighter;
 }
 .char-fullname{
   font-size: 0.8em;
-  margin-top: 1em;
+  margin: 1em 0;
+  line-height: 1.5em;
 }
 .char-fullname p{
   width: fit-content;
 }
 .char-cg{
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-end;
+  height: 100%;
 }
 .char-cg div{
   position: absolute;
 }
-.char-cg img{
-  width: 30em;
-  height: 30em;
-  object-fit: contain;
+.char-img{
+  display: flex;
+  justify-content: center;
 }
-.char-bg{
-  width: 18em;
+.char-img img{
   height: 28em;
-  background: #dc3c78;
-  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.3);
-}
-.char-cover{
-  width: 15em;
-  height: 28em;
-  background: #fff;
-  transform: rotate(12deg);
-  box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.3);
-}
-.char-info{
-  text-align: right;
-}
-.char-info li{
-  list-style: none;
+  bottom: 0;
+  right: 0;
 }
 .slider{
   height: 8em;
@@ -148,10 +155,11 @@ html, body, #app{
   content: "";
   position: absolute;
   display: block;
-  background: #eee;
+  background: #fff;
   height: 100%;
   width: 100%;
   opacity: 0;
+  z-index: 1;
   transform: translate(-100%, 0);
 }
 .test-enter-active, .test-leave-active{
@@ -179,4 +187,32 @@ html, body, #app{
 }
 .test-leave-to .trans-name::before{
   transform: translate(0, 0);
+}
+
+.left-enter-active, .left-leave-active{
+  position: absolute;
+  transition: all 1s;
+}
+.left-enter, .left-leave-to{
+  opacity: 0;
+}
+.left-enter{
+  transform: translate(20px, 0);
+}
+.left-leave-to{
+  transform: translate(-20px, 0);
+}
+
+.right-enter-active, .right-leave-active{
+  position: absolute;
+  transition: all 1s;
+}
+.right-enter, .right-leave-to{
+  opacity: 0;
+}
+.right-enter{
+  transform: translate(-20px, 0);
+}
+.right-leave-to{
+  transform: translate(20px, 0);
 }

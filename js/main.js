@@ -5,18 +5,26 @@ let app = new Vue({
       {
         Name: ['伊吹风子', '伊吹 風子', 'いぶき ふうこ', 'Ibuki Fuko'],
         CG: 'test2.png',
-        Mouth: 7,
-        Day: 20
+        Month: 7,
+        Day: 20,
+        Color: '#3c6e3c'
       },
       {
         Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
         CG: 'test.png',
-        Mouth: 12,
-        Day: 24
-      },
+        Month: 12,
+        Day: 24,
+        Color: '#dc3c78'
+      }
     ],
     show: [
-      ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa']
+      {
+        Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
+        CG: 'test.png',
+        Month: 12,
+        Day: 24,
+        Color: '#dc3c78'
+      }
     ],
     sliderMove: 0,
     sliderX: 0,
@@ -24,6 +32,8 @@ let app = new Vue({
     pastX: 0,
     mouseX: 0,
     middle: 0,
+    lastTarget: 0,
+    direction: '',
   },
   methods: {
     slider_down(event) {
@@ -54,16 +64,22 @@ let app = new Vue({
         }
       })
       this.sliderX = this.middle - items[target].offsetLeft - itemWidth
-      console.log(target + '   ' + this.sliderX)
+      if(target > this.lastTarget){
+        this.direction = 'right'
+      }else{
+        this.direction = 'left'
+      }
+      this.lastTarget = target
       this.show.pop()
-      this.show.push(this.data[items[target].dataset.id].Name)
+      this.show.push(this.data[items[target].dataset.id])
     },
     choose(event) {
+      console.log(this.sliderChange)
       if(!this.sliderChange){
         let itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
         this.sliderX = this.middle - event.currentTarget.offsetLeft - itemWidth
         this.show.pop()
-        this.show.push(this.data[event.currentTarget.dataset.id].Name)
+        this.show.push(this.data[event.currentTarget.dataset.id])
       }
     }
   },
