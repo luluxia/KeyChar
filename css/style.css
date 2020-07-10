@@ -92,7 +92,7 @@ html, body, #app{
   justify-content: center;
   align-items: flex-end;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 .char-cg div{
   position: absolute;
@@ -107,15 +107,22 @@ html, body, #app{
 }
 .char-pics{
   right: 0;
+  width: 6em;
+  height: 22em;
 }
 .char-pics li{
   list-style: none;
   margin: 1em 0;
-  border-radius: 0.2em;
-  overflow: hidden;
+  width: 6em;
+  height: 6em;
+  border: 1px solid #b1b1b1;
 }
 .char-pics img{
-  width: 10em;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(0.9);
+  opacity: 0.7;
 }
 .slider{
   height: 8em;
@@ -232,4 +239,22 @@ html, body, #app{
 }
 .right-leave-to{
   transform: translate(20px, 0);
+}
+
+.pic-enter-active, .pic-leave-active{
+  position: absolute;
+}
+.pic-enter-active li, .pic-leave-active li{
+  transition: all 1s;
+}
+.pic-enter li, .pic-leave-to li{
+  opacity: 0;
+  transform: rotate(45deg) scale(0);
+}
+
+.char-pic li:nth-child(2){
+  transition-delay: 0.2s;
+}
+.char-pic li:nth-child(3){
+  transition-delay: 0.4s;
 }

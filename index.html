@@ -32,15 +32,18 @@
           </div>
           <div class="char-cg">
             <transition-group class="char-img" :name="direction" tag="div">
-              <img v-for="item in show" :key = "item.CG" :src="'img/' + item.CG" alt="">
+              <img v-for="item in show" :key="item.CG" :src="'img/' + item.CG" alt="">
             </transition-group>
           </div>
           <div class="char-pics">
-            <ul>
-              <li><img src="img/pic.jpg" alt=""></li>
-              <li><img src="img/pic.jpg" alt=""></li>
-              <li><img src="img/pic.jpg" alt=""></li>
-            </ul>
+            <transition-group name="pic" tag="div" duration="1000">
+              <ul v-for="item in show" :key="item.Name[0]" class="char-pic">
+                <li v-for="pic in item.Pic"><img :src="'img/' + pic" alt=""></li>
+                <!-- <li><img src="img/pic.jpg" alt=""></li>
+                <li><img src="img/pic.jpg" alt=""></li>
+                <li><img src="img/pic.jpg" alt=""></li> -->
+              </ul>
+            </transition-group>
           </div>
         </div>
       </div>
