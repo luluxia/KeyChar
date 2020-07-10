@@ -5,6 +5,7 @@ let app = new Vue({
       {
         Name: ['伊吹风子', '伊吹 風子', 'いぶき ふうこ', 'Ibuki Fuko'],
         CG: 'test2.png',
+        Pic: ['pic.jpg', 'pic.jpg', 'pic.jpg'],
         Month: 7,
         Day: 20,
         Color: '#3c6e3c'
@@ -12,6 +13,7 @@ let app = new Vue({
       {
         Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
         CG: 'test.png',
+        Pic: ['pic2.jpg', 'pic2.jpg', 'pic2.jpg'],
         Month: 12,
         Day: 24,
         Color: '#dc3c78'
@@ -21,6 +23,7 @@ let app = new Vue({
       {
         Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
         CG: 'test.png',
+        Pic: ['pic2.jpg', 'pic2.jpg', 'pic2.jpg'],
         Month: 12,
         Day: 24,
         Color: '#dc3c78'
