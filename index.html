@@ -13,6 +13,7 @@
       <img src="img/key_logo.svg" alt="">
       <p>Character Birthday Timeline</p>
     </div>
+    <canvas id="star"></canvas>
     <div class="main">
       <div class="card">
         <div class="char">
@@ -33,6 +34,13 @@
             <transition-group class="char-img" :name="direction" tag="div">
               <img v-for="item in show" :key = "item.CG" :src="'img/' + item.CG" alt="">
             </transition-group>
+          </div>
+          <div class="char-pics">
+            <ul>
+              <li><img src="img/pic.jpg" alt=""></li>
+              <li><img src="img/pic.jpg" alt=""></li>
+              <li><img src="img/pic.jpg" alt=""></li>
+            </ul>
           </div>
         </div>
       </div>

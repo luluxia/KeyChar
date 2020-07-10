@@ -14,12 +14,18 @@ html, body, #app{
   color: #333;
   background: #eee;
 }
+#star{
+  position: fixed;
+  transition: opacity 1s;
+  opacity: 0.8;
+}
 .logo{
   position: absolute;
   right: 2em;
   top: 2em;
   display: flex;
   align-items: center;
+  display: none;
 }
 .logo img{
   width: 5em;
@@ -37,28 +43,26 @@ html, body, #app{
 .card{
   width: 100%;
   height: 26em;
-  background: #fff;
+  background: #ffffff;
   display: flex;
   align-items: center;
   box-shadow: 0 0 20px -15px rgba(0, 0, 0, 0.2);
 }
 .char{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 55em;
+  width: 54em;
   height: 100%;
   margin: 0 auto;
 }
-.char-title, .char-cg{
-  width: 50%;
+.char-title, .char-pics{
+  position: absolute;
 }
 .char-title{
-  height: 10em;
+  left: 0;
 }
 .char-title-content{
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -68,11 +72,12 @@ html, body, #app{
   opacity: 0.6;
 }
 .char-name{
-  width: fit-content;
+  width: max-content;
   font-size: 3em;
   letter-spacing: 0.1em;
   text-shadow: 0 2px 2px rgba(0,0,0,.1);
   font-weight: lighter;
+  width: max-content;
 }
 .char-fullname{
   font-size: 0.8em;
@@ -80,13 +85,14 @@ html, body, #app{
   line-height: 1.5em;
 }
 .char-fullname p{
-  width: fit-content;
+  width: max-content;
 }
 .char-cg{
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-end;
   height: 100%;
+  z-index: 1;
 }
 .char-cg div{
   position: absolute;
@@ -98,11 +104,22 @@ html, body, #app{
 .char-img img{
   height: 28em;
   bottom: 0;
+}
+.char-pics{
   right: 0;
+}
+.char-pics li{
+  list-style: none;
+  margin: 1em 0;
+  border-radius: 0.2em;
+  overflow: hidden;
+}
+.char-pics img{
+  width: 10em;
 }
 .slider{
   height: 8em;
-  background-color: #eeeeee;
+  background-color: rgba(238, 238, 238, 0.5);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 100 100'%3E%3Crect x='0' y='0' width='20' height='20' fill-opacity='0.6' fill='%23d7d7d7'/%3E%3C/svg%3E");
   overflow: hidden;
 }
