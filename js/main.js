@@ -1,34 +1,8 @@
 let app = new Vue({
   el: "#app",
   data: {
-    data: [
-      {
-        Name: ['伊吹风子', '伊吹 風子', 'いぶき ふうこ', 'Ibuki Fuko'],
-        CG: 'test2.png',
-        Pic: ['pic.jpg', 'pic.jpg', 'pic.jpg'],
-        Month: 7,
-        Day: 20,
-        Color: '#3c6e3c'
-      },
-      {
-        Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
-        CG: 'test.png',
-        Pic: ['pic2.jpg', 'pic2.jpg', 'pic2.jpg'],
-        Month: 12,
-        Day: 24,
-        Color: '#dc3c78'
-      }
-    ],
-    show: [
-      {
-        Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
-        CG: 'test.png',
-        Pic: ['pic2.jpg', 'pic2.jpg', 'pic2.jpg'],
-        Month: 12,
-        Day: 24,
-        Color: '#dc3c78'
-      }
-    ],
+    data: null,
+    show: [],
     sliderMove: 0,
     sliderX: 0,
     sliderChange: 0,
@@ -37,6 +11,7 @@ let app = new Vue({
     middle: 0,
     lastTarget: 0,
     direction: '',
+    itemWidth: 0,
   },
   methods: {
     star() {
@@ -106,17 +81,16 @@ let app = new Vue({
     slider_up() {
       this.sliderMove = 0
       let items = document.querySelectorAll('.slider-item')
-      let itemWidth = items[0].clientWidth / 2
       let target = 0
-      let targetWidth = Math.abs(items[0].getBoundingClientRect().left + itemWidth - this.middle)
+      let targetWidth = Math.abs(items[0].getBoundingClientRect().left + this.itemWidth - this.middle)
       items.forEach((item, index) => {
-        let width = Math.abs(item.getBoundingClientRect().left + itemWidth - this.middle)
+        let width = Math.abs(item.getBoundingClientRect().left + this.itemWidth - this.middle)
         if(width < targetWidth){
           target = index
           targetWidth = width
         }
       })
-      this.sliderX = this.middle - items[target].offsetLeft - itemWidth
+      this.sliderX = this.middle - items[target].offsetLeft - this.itemWidth
       if(target > this.lastTarget){
         this.direction = 'right'
       }else{
@@ -129,14 +103,51 @@ let app = new Vue({
     choose(event) {
       console.log(this.sliderChange)
       if(!this.sliderChange){
-        let itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
-        this.sliderX = this.middle - event.currentTarget.offsetLeft - itemWidth
+        this.sliderX = this.middle - event.currentTarget.offsetLeft - this.itemWidth
+        if(event.currentTarget.dataset.id > this.lastTarget){
+          this.direction = 'right'
+        }else{
+          this.direction = 'left'
+        }
+        this.lastTarget = event.currentTarget.dataset.id
         this.show.pop()
         this.show.push(this.data[event.currentTarget.dataset.id])
       }
     }
   },
   mounted() {
+    //初始化数据
+    this.data = _.sortBy(data, ['month', 'day', 'name[3]'])
+    this.show.push(this.data[0])
+
+    this.$nextTick(()=>{
+      let months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10 ,11, 12]
+      months.forEach(item => {
+        if(document.querySelector('li[data-month="' + item +'"]')){
+          let el = document.querySelector('li[data-month="' + item +'"]')
+          el.insertAdjacentHTML('beforeBegin', '<li class="slider-month">' + item + '月</li>')
+        }
+      })
+      this.itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
+    })
+
+    //滚轮事件
+    window.addEventListener('wheel', _.debounce(event => {
+      if(event.deltaY > 0 && this.lastTarget != this.data.length - 1){
+        this.direction = 'right'
+        this.lastTarget++
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.lastTarget +'"]').offsetLeft - this.itemWidth
+        this.show.pop()
+        this.show.push(this.data[this.lastTarget])
+      }else if(event.deltaY < 0 && this.lastTarget != 0){
+        this.direction = 'left'
+        this.lastTarget--
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.lastTarget +'"]').offsetLeft - this.itemWidth
+        this.show.pop()
+        this.show.push(this.data[this.lastTarget])
+      }
+    }, 100))
+
     this.middle = document.body.clientWidth / 2
     this.star()
   }

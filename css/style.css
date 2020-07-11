@@ -87,6 +87,12 @@ html, body, #app{
 .char-fullname p{
   width: max-content;
 }
+.char-info li{
+  font-size: 0.8em;
+  line-height: 1.5em;
+  width: max-content;
+  list-style: none;
+}
 .char-cg{
   display: flex;
   justify-content: center;
@@ -117,12 +123,17 @@ html, body, #app{
   height: 6em;
   border: 1px solid #b1b1b1;
 }
+.char-pic li:hover .char-pic-item{
+  transform: scale(1);
+  opacity: 1;
+}
 .char-pics img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform: scale(0.9);
   opacity: 0.7;
+  transition: transform 0.3s, opacity 0.3s;
 }
 .slider{
   height: 8em;
