@@ -3,13 +3,13 @@ let app = new Vue({
   data: {
     data: null,
     show: [],
-    sliderMove: 0,
+    sliderMove: 1,
     sliderX: 0,
     sliderChange: 0,
     pastX: 0,
     mouseX: 0,
     middle: 0,
-    lastTarget: 0,
+    nowTarget: 0,
     direction: '',
     itemWidth: 0,
   },
@@ -56,7 +56,7 @@ let app = new Vue({
           }
       }
       let create = () => {
-          var e=c.getContext("2d");
+          let e=c.getContext("2d");
           e.lineCap="round";
           setInterval(() => {
               star(e);
@@ -71,10 +71,12 @@ let app = new Vue({
       this.pastX = this.sliderX
     },
     slider_move(event) {
-      let changeX
       if(this.sliderMove){
-        this.sliderChange = 1
+        let changeX
         changeX = this.mouseX - event.clientX
+        if(this.sliderX != this.pastX - changeX){
+          this.sliderChange = 1
+        }
         this.sliderX = this.pastX - changeX
       }
     },
@@ -91,12 +93,12 @@ let app = new Vue({
         }
       })
       this.sliderX = this.middle - items[target].offsetLeft - this.itemWidth
-      if(target > this.lastTarget){
+      if(target > this.nowTarget){
         this.direction = 'right'
       }else{
         this.direction = 'left'
       }
-      this.lastTarget = target
+      this.nowTarget = target
       this.show.pop()
       this.show.push(this.data[items[target].dataset.id])
     },
@@ -104,51 +106,70 @@ let app = new Vue({
       console.log(this.sliderChange)
       if(!this.sliderChange){
         this.sliderX = this.middle - event.currentTarget.offsetLeft - this.itemWidth
-        if(event.currentTarget.dataset.id > this.lastTarget){
+        if(event.currentTarget.dataset.id > this.nowTarget){
           this.direction = 'right'
         }else{
           this.direction = 'left'
         }
-        this.lastTarget = event.currentTarget.dataset.id
+        this.nowTarget = event.currentTarget.dataset.id
         this.show.pop()
         this.show.push(this.data[event.currentTarget.dataset.id])
       }
     }
   },
   mounted() {
-    //初始化数据
+    //初始化
     this.data = _.sortBy(data, ['month', 'day', 'name[3]'])
-    this.show.push(this.data[0])
+    this.middle = document.body.clientWidth / 2
+    this.star()
 
-    this.$nextTick(()=>{
-      let months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10 ,11, 12]
+    //往后获取生日最近的角色
+    let nowMonth = new Date().getMonth()
+    let nowDay = new Date().getDate()
+    let target = _.findIndex(this.data, item => {
+      return (item.month == nowMonth && item.day >= nowDay || item.month > nowMonth)
+    })
+    if(!target){
+      target = 1
+    }
+    this.nowTarget = target
+
+    //完成时间轴并跳转至生日最近的角色
+    this.$nextTick(() => {
+      let months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10 ,11, 12, 13]
       months.forEach(item => {
         if(document.querySelector('li[data-month="' + item +'"]')){
           let el = document.querySelector('li[data-month="' + item +'"]')
-          el.insertAdjacentHTML('beforeBegin', '<li class="slider-month">' + item + '月</li>')
+          if(item == 13){
+            el.insertAdjacentHTML('beforeBegin', '<li class="slider-month">无</li>')
+          }else{
+            el.insertAdjacentHTML('beforeBegin', '<li class="slider-month">' + item + '月</li>')
+          }
         }
       })
       this.itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
+      this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+      this.show.push(this.data[this.nowTarget])
+      setTimeout(() => {
+        this.sliderMove = 0
+      }, 300)
     })
 
     //滚轮事件
     window.addEventListener('wheel', _.debounce(event => {
-      if(event.deltaY > 0 && this.lastTarget != this.data.length - 1){
+      if(event.deltaY > 0 && this.nowTarget != this.data.length - 1){
         this.direction = 'right'
-        this.lastTarget++
-        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.lastTarget +'"]').offsetLeft - this.itemWidth
+        this.nowTarget++
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
         this.show.pop()
-        this.show.push(this.data[this.lastTarget])
-      }else if(event.deltaY < 0 && this.lastTarget != 0){
+        this.show.push(this.data[this.nowTarget])
+      }else if(event.deltaY < 0 && this.nowTarget != 0){
         this.direction = 'left'
-        this.lastTarget--
-        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.lastTarget +'"]').offsetLeft - this.itemWidth
+        this.nowTarget--
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
         this.show.pop()
-        this.show.push(this.data[this.lastTarget])
+        this.show.push(this.data[this.nowTarget])
       }
     }, 100))
-
-    this.middle = document.body.clientWidth / 2
-    this.star()
   }
 })

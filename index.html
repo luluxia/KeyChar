@@ -10,7 +10,7 @@
   <title>Key Character Birthday Timeline</title>
 </head>
 <body>
-  <div id="app">
+  <div id="app" v-cloak>
     <!-- logo -->
     <div class="logo">
       <img src="img/key_logo.svg" alt="">
@@ -26,8 +26,9 @@
           <!-- 人物信息 -->
           <div class="char-title">
             <transition-group name="test" tag="div" :duration="{ enter: 1000, leave: 500 }" class="char-title-content">
-              <div v-for="item in show" :key="item.name[3]">
-                <p class="char-month trans-name">{{item.month + '月' + item.day + '日'}}</p>
+              <div v-for="item in show" :key="item.name[0]">
+                <p v-if="item.month == 13" class="char-month trans-name">无</p>
+                <p v-else class="char-month trans-name">{{item.month + '月' + item.day + '日'}}</p>
                 <h1 :style="{color: item.color}" class="char-name trans-name">{{item.name[0]}}</h1>
                 <div class="char-fullname">
                   <p class="trans-name">{{item.name[1]}}</p>
@@ -36,6 +37,9 @@
                 </div>
                 <ul class="char-info">
                   <li v-for="info in item.other" class="trans-name">{{info}}</li>
+                </ul>
+                <ul class="char-work trans-name">
+                  <li v-for="info in item.from">{{info}}</li>
                 </ul>
               </div>
             </transition-group>
@@ -49,7 +53,7 @@
           <!-- 人物CG -->
           <div class="char-pics">
             <transition-group name="pic" tag="div" duration="1000">
-              <ul v-for="item in show" :key="item.name[3]" class="char-pic">
+              <ul v-for="item in show" :key="item.name[0]" class="char-pic">
                 <li v-if="index" v-for="(pic, index) in item.cg"><img :src="'img/' + pic" alt="" class="char-pic-item"></li>
               </ul>
             </transition-group>
@@ -62,10 +66,11 @@
       <div :style="{transform: 'translate(' + sliderX + 'px ,0)', transition: sliderMove ? '' : 'transform 0.3s'}" class="slider-content">
         <ul class="slider-list">
           <li @click="choose" :data-id="index" :data-month="item.month" v-for="(item, index) in data" class="slider-item">
-            <div class="slider-icon">
+            <div :style="{borderColor: nowTarget == index ? item.color : ''}" class="slider-icon">
               <img :src="'img/' + item.cg[0]" alt="">
             </div>
-            <p>{{item.day}}日</p>
+            <p v-if="item.day == 32" :style="{background: nowTarget == index ? item.color : ''}">无</p>
+            <p v-else :style="{background: nowTarget == index ? item.color : ''}">{{item.day}}日</p>
           </li>
         </ul>
       </div>
