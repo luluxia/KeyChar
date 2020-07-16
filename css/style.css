@@ -9,6 +9,9 @@
 [v-cloak] {
   display: none;
 }
+body{
+  touch-action: none;
+}
 html, body, #app{
   width: 100%;
   height: 100%;
@@ -16,6 +19,7 @@ html, body, #app{
 #app{
   color: #333;
   background: #eee;
+  overflow: hidden;
 }
 #star{
   position: fixed;
@@ -283,4 +287,71 @@ html, body, #app{
 }
 .char-pic li:nth-child(3){
   transition-delay: 0.4s;
+}
+
+@media (max-width: 750px) {
+  .main{
+    height: calc(100% - 5em);
+  }
+  .slider{
+    height: 5em;
+  }
+  .slider-icon{
+    height: 4em;
+    width: 4em;
+  }
+  .slider-content li{
+    margin: 0 0.8em;
+  }
+  .slider-month{
+    font-size: 1.5em;
+  }
+
+  .card{
+    width: 95vw;
+    height: 95vw;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  .char-cg{
+    width: 100%;
+    height: calc(100% + 2em);
+    position: absolute;
+    bottom: 0;
+  }
+  .char-img{
+    height: 100%;
+  }
+  .char-img img{
+    height: 100%;
+  }
+  .char-cg-m-top{
+    overflow: hidden;
+    border-radius: 0 0 50% 50%;
+  }
+  .char-cg-m-bottom{
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .char-cg-m-bottom .char-img{
+    /* 修复微信的傻逼BUG */
+    height: calc(100% + 0.01px);
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .char-cg-m-bottom img{
+    height: calc(100% + 2em);
+    position: absolute;
+    bottom: 0;
+  }
+
+  .round{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+  }
 }

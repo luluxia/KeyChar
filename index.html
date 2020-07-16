@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/data.js"></script>
   <script src="js/vue.js"></script>
@@ -10,7 +10,7 @@
   <title>Key Character Birthday Timeline</title>
 </head>
 <body>
-  <div id="app" v-cloak>
+  <div id="app" @touchstart="touch_down" @touchmove="touch_move" @touchend="touch_up" v-cloak>
     <!-- logo -->
     <div class="logo">
       <img src="img/key_logo.svg" alt="">
@@ -45,7 +45,13 @@
             </transition-group>
           </div>
           <!-- 人物立绘 -->
-          <div class="char-cg">
+          <div class="char-cg char-cg-m-top">
+            <transition-group class="char-img" :name="direction" tag="div">
+              <img v-for="item in show" :key="item.cg[0]" :src="'img/' + item.cg[0]" alt="">
+            </transition-group>
+          </div>
+          <!-- 人物立绘 -->
+          <div v-if="isPhone" class="char-cg char-cg-m-bottom">
             <transition-group class="char-img" :name="direction" tag="div">
               <img v-for="item in show" :key="item.cg[0]" :src="'img/' + item.cg[0]" alt="">
             </transition-group>

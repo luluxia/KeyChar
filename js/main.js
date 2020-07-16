@@ -12,6 +12,9 @@ let app = new Vue({
     nowTarget: 0,
     direction: '',
     itemWidth: 0,
+    isPhone: 0,
+
+    touchX: 0,
   },
   methods: {
     star() {
@@ -94,9 +97,9 @@ let app = new Vue({
       })
       this.sliderX = this.middle - items[target].offsetLeft - this.itemWidth
       if(target > this.nowTarget){
-        this.direction = 'right'
-      }else{
         this.direction = 'left'
+      }else{
+        this.direction = 'right'
       }
       this.nowTarget = target
       this.show.pop()
@@ -107,14 +110,41 @@ let app = new Vue({
       if(!this.sliderChange){
         this.sliderX = this.middle - event.currentTarget.offsetLeft - this.itemWidth
         if(event.currentTarget.dataset.id > this.nowTarget){
-          this.direction = 'right'
-        }else{
           this.direction = 'left'
+        }else{
+          this.direction = 'right'
         }
         this.nowTarget = event.currentTarget.dataset.id
         this.show.pop()
         this.show.push(this.data[event.currentTarget.dataset.id])
       }
+    },
+
+    touch_down(event){
+      this.touchX = event.changedTouches[0].clientX
+    },
+    touch_move(event){
+      // console.log(event.changedTouches[0].clientX - this.touchX)
+      if(event.changedTouches[0].clientX - this.touchX >= 80 && this.nowTarget != 0){
+        this.direction = 'right'
+        this.nowTarget--
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+        this.show.pop()
+        this.show.push(this.data[this.nowTarget])
+
+        this.touchX = event.changedTouches[0].clientX
+      }else if(event.changedTouches[0].clientX - this.touchX <= -80 && this.nowTarget != this.data.length - 1){
+        this.direction = 'left'
+        this.nowTarget++
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+        this.show.pop()
+        this.show.push(this.data[this.nowTarget])
+
+        this.touchX = event.changedTouches[0].clientX
+      }
+    },
+    touch_up(event){
+
     }
   },
   mounted() {
@@ -158,18 +188,22 @@ let app = new Vue({
     //滚轮事件
     window.addEventListener('wheel', _.debounce(event => {
       if(event.deltaY > 0 && this.nowTarget != this.data.length - 1){
-        this.direction = 'right'
+        this.direction = 'left'
         this.nowTarget++
         this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
         this.show.pop()
         this.show.push(this.data[this.nowTarget])
       }else if(event.deltaY < 0 && this.nowTarget != 0){
-        this.direction = 'left'
+        this.direction = 'right'
         this.nowTarget--
         this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
         this.show.pop()
         this.show.push(this.data[this.nowTarget])
       }
     }, 100))
+
+    if(document.body.clientWidth < 700){
+      this.isPhone = 1
+    }
   }
 })
