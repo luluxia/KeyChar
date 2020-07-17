@@ -316,7 +316,8 @@ html, body, #app{
     border-radius: 50%;
     margin: 0 auto;
     background: none;
-    border: 0.5em solid #fff;
+    border: 0.2em dashed #fff;
+    box-shadow: none;
   }
   .char-cg{
     width: 100%;

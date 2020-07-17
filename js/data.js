@@ -441,4 +441,147 @@ let data = [
       '待补充'
     ]
   },
+  {
+    name: ['直枝理树', '直枝 理樹', 'なおえ りき', 'Naoe Riki'],
+    cg: ['naoe_riki_0.png', ' ', ' ', ' '],
+    month: 1,
+    day: 17,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['神北小毬', '神北 小毬', 'かみきた こまり', 'Kamikita Komari'],
+    cg: ['kamikita_komari_0.png', ' ', ' ', ' '],
+    month: 4,
+    day: 5,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['枣铃', '棗 鈴', 'なつめ りん', 'Natsume Rin'],
+    cg: ['natsume_rin_0.png', ' ', ' ', ' '],
+    month: 9,
+    day: 2,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['三枝叶留佳', '三枝 葉留佳', 'さいぐさ はるか', 'Saigusa Haruka'],
+    cg: ['saigusa_haruka_0.png', ' ', ' ', ' '],
+    month: 10,
+    day: 13,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['能美库特莉亚芙卡', '能美 クドリャフカ', 'のうみ クドリャフカ', 'Noumi Kudryavka'],
+    cg: ['noumi_kudryavka_0.png', ' ', ' ', ' '],
+    month: 6,
+    day: 12,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['来谷唯湖', '来ヶ谷 唯湖', 'くるがや ゆいこ', 'Kurugaya Yuiko'],
+    cg: ['kuruguya_yuiko_0.png', ' ', ' ', ' '],
+    month: 3,
+    day: 13,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['西园美鱼', '西園 美魚', 'にしぞの みお', 'Nishizono Mio'],
+    cg: ['nishizono_mio_0.png', ' ', ' ', ' '],
+    month: 8,
+    day: 22,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['二木佳奈多', '二木 加奈多', 'ふたき かなた', 'Futaki Kanata'],
+    cg: ['futaki_kanata_0.png', ' ', ' ', ' '],
+    month: 10,
+    day: 13,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['笹濑川佐佐美', '笹瀬川 佐々美', 'ささせがわ ささみ', 'Sasasegawa Sasami'],
+    cg: ['sasasegawa_sasami_0.png', ' ', ' ', ' '],
+    month: 12,
+    day: 3,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['朱鹭户沙耶', '朱鷺戸 沙耶', 'ときど さや', 'Tokido Saya'],
+    cg: ['tokido_saya_0.png', ' ', ' ', ' '],
+    month: 10,
+    day: 21,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['枣恭介', '棗 恭介', 'なつめ きょうすけ', 'Natume Kyousuke'],
+    cg: ['natume_kyousuke_0.png', ' ', ' ', ' '],
+    month: 5,
+    day: 4,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['井之原真人', '井ノ原 真人', 'いのはら まさと', 'Inohara Masato'],
+    cg: ['inohara_masato_0.png', ' ', ' ', ' '],
+    month: 11,
+    day: 6,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['宫泽谦吾', '宮沢 謙吾', 'みやざわ けんご', 'Miyazawa kengo'],
+    cg: ['miyazawa_kengo_0.png', ' ', ' ', ' '],
+    month: 4,
+    day: 30,
+    color: '#',
+    from: ['Little Busters!'],
+    other: [
+      '待补充'
+    ]
+  },
 ]

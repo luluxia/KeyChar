@@ -1,20 +1,21 @@
 let app = new Vue({
   el: "#app",
   data: {
-    data: null,
+    data: null,     //整理后的数据
+    dataByMonth: [],
     show: [],
-    sliderMove: 1,
-    sliderX: 0,
-    sliderChange: 0,
-    pastX: 0,
-    mouseX: 0,
-    middle: 0,
-    nowTarget: 0,
-    direction: '',
-    itemWidth: 0,
-    isPhone: 0,
+    sliderMove: 1,  //控制时间轴动画
+    sliderX: 0,     //时间轴坐标
+    sliderChange: 0,//时间轴是否发生移动
+    pastX: 0,       //过去的坐标
+    mouseX: 0,      //鼠标坐标
+    middle: 0,      //网页中心点
+    nowTarget: 0,   //目前显示对象
+    direction: '',  //动画方向
+    itemWidth: 0,   //时间轴图标宽度
+    isPhone: 0,     //是否为手机端
 
-    touchX: 0,
+    touchX: 0,      //触控坐标
   },
   methods: {
     star() {
@@ -150,6 +151,13 @@ let app = new Vue({
   mounted() {
     //初始化
     this.data = _.sortBy(data, ['month', 'day', 'name[3]'])
+
+    //按月份排序
+    // this.dataByMonth = Array.from({length:13},()=>[])
+    // this.data.forEach(item => {
+    //   this.dataByMonth[item.month - 1].push(item)
+    // })
+
     this.middle = document.body.clientWidth / 2
     this.star()
 
