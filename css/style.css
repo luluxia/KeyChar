@@ -291,6 +291,8 @@ html, body, #app{
 
 @media (max-width: 750px) {
   .main{
+    flex-direction: column;
+    justify-content: center;
     height: calc(100% - 5em);
   }
   .slider{
@@ -305,13 +307,16 @@ html, body, #app{
   }
   .slider-month{
     font-size: 1.5em;
+    margin: 0 0.4em !important;
   }
 
   .card{
-    width: 95vw;
-    height: 95vw;
+    width: 90vw;
+    height: 90vw;
     border-radius: 50%;
     margin: 0 auto;
+    background: none;
+    border: 0.5em solid #fff;
   }
   .char-cg{
     width: 100%;
@@ -353,5 +358,29 @@ html, body, #app{
     border-radius: 50%;
     overflow: hidden;
     z-index: 2;
+  }
+
+  .char-title{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 6em;
+    margin-top: 1em;
+  }
+  .char-title div{
+    width: 100%;
+  }
+  .char-name{
+    width: 100%;
+    font-size: 2em;
+  }
+  .char-month{
+    margin-bottom: 0;
+  }
+  .char-work{
+    margin-top: 0.3em;
+  }
+  .char-work li{
+    background: #fff;
   }
 }

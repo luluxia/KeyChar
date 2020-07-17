@@ -24,7 +24,7 @@
         <!-- 内容区域 -->
         <div class="char">
           <!-- 人物信息 -->
-          <div class="char-title">
+          <div v-if="!isPhone" class="char-title">
             <transition-group name="test" tag="div" :duration="{ enter: 1000, leave: 500 }" class="char-title-content">
               <div v-for="item in show" :key="item.name[0]">
                 <p v-if="item.month == 13" class="char-month trans-name">无</p>
@@ -57,7 +57,7 @@
             </transition-group>
           </div>
           <!-- 人物CG -->
-          <div class="char-pics">
+          <div v-if="!isPhone" class="char-pics">
             <transition-group name="pic" tag="div" duration="1000">
               <ul v-for="item in show" :key="item.name[0]" class="char-pic">
                 <li v-if="index" v-for="(pic, index) in item.cg"><img :src="'img/' + pic" alt="" class="char-pic-item"></li>
@@ -65,6 +65,19 @@
             </transition-group>
           </div>
         </div>
+      </div>
+      <!-- 手机版人物信息 -->
+      <div v-if="isPhone" class="char-title">
+        <transition-group :name="direction" tag="div">
+          <div v-for="item in show" :key="item.name[0]">
+            <p v-if="item.month == 13" class="char-month">无</p>
+            <p v-else class="char-month">{{item.month + '月' + item.day + '日'}}</p>
+            <h1 :style="{color: item.color}" class="char-name">{{item.name[0]}}</h1>
+            <ul class="char-work">
+              <li v-for="info in item.from">{{info}}</li>
+            </ul>
+          </div>
+        </transition-group>
       </div>
     </div>
     <!-- 时间轴 -->
