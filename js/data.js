@@ -105,7 +105,7 @@ let data = [
     cg: ['sunohara_youhei_0.png', ' ', ' ', ' '],
     month: 2,
     day: 17,
-    color: '#AAAA28',
+    color: '#996a4b',
     from: ['CLANNAD'],
     other: [
       '待补充'
@@ -336,7 +336,7 @@ let data = [
     cg: ['tsukimiya_ayu_0.png', ' ', ' ', ' '],
     month: 1,
     day: 7,
-    color: '#C28449',
+    color: '#b86735',
     from: ['Kanon'],
     other: [
       '待补充'
@@ -446,7 +446,7 @@ let data = [
     cg: ['naoe_riki_0.png', ' ', ' ', ' '],
     month: 1,
     day: 17,
-    color: '#',
+    color: '#876e58',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -457,7 +457,7 @@ let data = [
     cg: ['kamikita_komari_0.png', ' ', ' ', ' '],
     month: 4,
     day: 5,
-    color: '#',
+    color: '#b87b6f',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -468,7 +468,7 @@ let data = [
     cg: ['natsume_rin_0.png', ' ', ' ', ' '],
     month: 9,
     day: 2,
-    color: '#',
+    color: '#9a5c4d',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -479,7 +479,7 @@ let data = [
     cg: ['saigusa_haruka_0.png', ' ', ' ', ' '],
     month: 10,
     day: 13,
-    color: '#',
+    color: '#d06ea1',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -490,7 +490,7 @@ let data = [
     cg: ['noumi_kudryavka_0.png', ' ', ' ', ' '],
     month: 6,
     day: 12,
-    color: '#',
+    color: '#d1b5cc',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -501,7 +501,7 @@ let data = [
     cg: ['kuruguya_yuiko_0.png', ' ', ' ', ' '],
     month: 3,
     day: 13,
-    color: '#',
+    color: '#5D5B66',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -512,7 +512,7 @@ let data = [
     cg: ['nishizono_mio_0.png', ' ', ' ', ' '],
     month: 8,
     day: 22,
-    color: '#',
+    color: '#78aeeb',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -523,7 +523,7 @@ let data = [
     cg: ['futaki_kanata_0.png', ' ', ' ', ' '],
     month: 10,
     day: 13,
-    color: '#',
+    color: '#d06ea1',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -534,7 +534,7 @@ let data = [
     cg: ['sasasegawa_sasami_0.png', ' ', ' ', ' '],
     month: 12,
     day: 3,
-    color: '#',
+    color: '#9179ae',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -545,7 +545,7 @@ let data = [
     cg: ['tokido_saya_0.png', ' ', ' ', ' '],
     month: 10,
     day: 21,
-    color: '#',
+    color: '#f1d1a0',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -556,7 +556,7 @@ let data = [
     cg: ['natume_kyousuke_0.png', ' ', ' ', ' '],
     month: 5,
     day: 4,
-    color: '#',
+    color: '#c17c6c',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -567,7 +567,7 @@ let data = [
     cg: ['inohara_masato_0.png', ' ', ' ', ' '],
     month: 11,
     day: 6,
-    color: '#',
+    color: '#5e616c',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -578,7 +578,7 @@ let data = [
     cg: ['miyazawa_kengo_0.png', ' ', ' ', ' '],
     month: 4,
     day: 30,
-    color: '#',
+    color: '#a4a097',
     from: ['Little Busters!'],
     other: [
       '待补充'
