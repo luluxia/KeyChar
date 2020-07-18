@@ -1,3 +1,6 @@
+Vue.use(VueLazyload, {
+  observer: true
+})
 let app = new Vue({
   el: "#app",
   data: {

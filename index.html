@@ -7,6 +7,7 @@
   <script src="js/data.js"></script>
   <script src="js/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.19/lodash.min.js"></script>
+  <script src="https://unpkg.com/vue-lazyload/vue-lazyload.js"></script>
   <title>Key Character Birthday Timeline</title>
 </head>
 <body>
@@ -86,7 +87,7 @@
         <ul class="slider-list">
           <li @click="choose" :data-id="index" :data-month="item.month" v-for="(item, index) in data" class="slider-item">
             <div :style="{borderColor: nowTarget == index ? item.color : ''}" class="slider-icon">
-              <img :src="'img/' + item.cg[0]" alt="">
+              <img v-lazy="'img/' + item.cg[0]" :key="index" alt="">
             </div>
             <p v-if="item.day == 32" :style="{background: nowTarget == index ? item.color : ''}">无</p>
             <p v-else :style="{background: nowTarget == index ? item.color : ''}">{{item.day}}日</p>

@@ -26,6 +26,13 @@ html, body, #app{
   transition: opacity 1s;
   opacity: 0.8;
 }
+img[lazy=loading]{
+  opacity: 0;
+}
+img[lazy=loaded] {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
 .logo{
   position: absolute;
   right: 2em;
