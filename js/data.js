@@ -584,4 +584,334 @@ let data = [
       '待补充'
     ]
   },
+  {
+    name: ['天王寺瑚太朗', '天王寺 瑚太朗', 'てんのうじ こたろう', 'Tennouji Kotarou'],
+    cg: ['tennouji_kotarou_0.png', ' ', ' ', ' '],
+    month: 5,
+    day: 2,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['神户小鸟', '神戸 小鳥', 'かんべ ことり', 'Kanbe Kotori'],
+    cg: ['kanbe_kotori_0.png', ' ', ' ', ' '],
+    month: 7,
+    day: 26,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['凤千早', '鳳 ちはや', 'おおとり ちはや', 'Ohtori chihaya'],
+    cg: ['ohtori_chihaya_0.png', ' ', ' ', ' '],
+    month: 8,
+    day: 24,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['千里朱音', '千里 朱音', 'せんり あかね', 'Senri Akane'],
+    cg: ['senri_akane_0.png', ' ', ' ', ' '],
+    month: 2,
+    day: 17,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['中津静流', '中津 静流', 'なかつ しずる', 'Nakatsu Sizuru'],
+    cg: ['nakatsu_sizuru_0.png', ' ', ' ', ' '],
+    month: 6,
+    day: 18,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['此花露西娅', '此花 ルチア', 'このはな ルチア', 'Konohana Lucia'],
+    cg: ['konohana_lucia_0.png', ' ', ' ', ' '],
+    month: 12,
+    day: 23,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['篝', '篝', 'かがり', 'Kagari'],
+    cg: ['kagari_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['吉野晴彦', '吉野 晴彦', 'よしの はるひこ', 'Yoshino Haruhiko'],
+    cg: ['yoshino_haruhiko_0.png', ' ', ' ', ' '],
+    month: 11,
+    day: 7,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['凤咲夜', '鳳 咲夜', 'おおとり さくや', 'Ohtori Sakuya'],
+    cg: ['ohtori_sakuya_0.png', ' ', ' ', ' '],
+    month: 3,
+    day: 27,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['井上晶', '井上 晶', 'いのうえ あきら', 'Inoue Akira'],
+    cg: ['inoue_akira_0.png', ' ', ' ', ' '],
+    month: 3,
+    day: 6,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  // {
+  //   name: ['江坂宗源', '江坂 宗源', 'えさか そうげん', 'Esaka Sougen'],
+  //   cg: ['esaka_sougen_0.png', ' ', ' ', ' '],
+  //   month: 13,
+  //   day: 32,
+  //   color: '#000',
+  //   from: ['Rewrite'],
+  //   other: [
+  //     '待补充'
+  //   ]
+  // },
+  {
+    name: ['西九条灯花', '西九条 灯花', 'にしくじょう とうか', 'Nishikujou Touka'],
+    cg: ['nishikijou_touka_0.png', ' ', ' ', ' '],
+    month: 7,
+    day: 12,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  // {
+  //   name: ['御堂', 'ミドウ', 'Midow'],
+  //   cg: ['midow_0.png', ' ', ' ', ' '],
+  //   month: 13,
+  //   day: 32,
+  //   color: '#000',
+  //   from: ['Rewrite'],
+  //   other: [
+  //     '待补充'
+  //   ]
+  // },
+  // {
+  //   name: ['今宫新', '今宮 新', 'いまみや あらた', 'Imamiya Arata'],
+  //   cg: ['imamiya_arata_0.png', ' ', ' ', ' '],
+  //   month: 13,
+  //   day: 32,
+  //   color: '#000',
+  //   from: ['Rewrite'],
+  //   other: [
+  //     '待补充'
+  //   ]
+  // },
+  {
+    name: ['志麻子', 'しまこ', 'Shimako'],
+    cg: ['shimako_0.png', ' ', ' ', ' '],
+    month: 6,
+    day: 13,
+    color: '#000',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  // {
+  //   name: ['琪比摩斯', 'ちびもす', 'Chibi-Moth'],
+  //   cg: ['chibi_moth_0.png', ' ', ' ', ' '],
+  //   month: 13,
+  //   day: 32,
+  //   color: '#000',
+  //   from: ['Rewrite'],
+  //   other: [
+  //     '待补充'
+  //   ]
+  // },
+  {
+    name: ['鸣濑白羽', '鳴瀬 しろは', 'なるせ しろは', 'Naruse Shiroha'],
+    cg: ['naruse_shiroha_0.png', ' ', ' ', ' '],
+    month: 6,
+    day: 8,
+    color: '#69489d',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['空门苍', '空門 蒼', 'そらかど あお', 'Sorakado Ao'],
+    cg: ['sorakado_ao_0.png', ' ', ' ', ' '],
+    month: 9,
+    day: 20,
+    color: '#e8547b',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['久岛鸥', '久島 鴎', 'くしま かもめ', 'Kushima Kamome'],
+    cg: ['kushima_kamome_0.png', ' ', ' ', ' '],
+    month: 4,
+    day: 4,
+    color: '#e3a118',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['䌷文德斯', '紬 ヴェンダース', 'つむぎ ヴェンダース', 'Tsumugi Wenders'],
+    cg: ['tsumugi_wenders_0.png', ' ', ' ', ' '],
+    month: 8,
+    day: 31,
+    color: '#389e0e',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['野村美希', '野村 美希', 'のむら みき', 'Nomura Miki'],
+    cg: ['nomura_miki_0.png', ' ', ' ', ' '],
+    month: 2,
+    day: 2,
+    color: '#30b043',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['水织静久', '水織 静久', 'みずおり しずく', 'Mizuori Shizuku'],
+    cg: ['mizuori_shizuku_0.png', ' ', ' ', ' '],
+    month: 4,
+    day: 29,
+    color: '#ab47a1',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['加藤羽未', '加藤 うみ', 'かとう うみ', 'Kato Umi'],
+    cg: ['kato_umi_0.png', ' ', ' ', ' '],
+    month: 9,
+    day: 1,
+    color: '#c9358b',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['神山识', '神山 識', 'かみやま しき', 'Kamiyama Shiki'],
+    cg: ['kamiyama_shiki_0.png', ' ', ' ', ' '],
+    month: 7,
+    day: 4,
+    color: '#d32258',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['三谷良一', '三谷 良一', 'みたに りょういち', 'Mitani Ryoichi'],
+    cg: ['mitani_ryoichi_0.png', ' ', ' ', ' '],
+    month: 2,
+    day: 9,
+    color: '#fbb14a',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['加纳天善', '加納 天善', 'かのう てんざん', 'Kano Tenzen'],
+    cg: ['kano_tenzen_0.png', ' ', ' ', ' '],
+    month: 10,
+    day: 10,
+    color: '#86d1d7',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['鸣濑小鸠', '鳴瀬 小鳩', 'なるせ こばと', 'Naruse Kobato'],
+    cg: ['naruse_kobato_0.png', ' ', ' ', ' '],
+    month: 12,
+    day: 2,
+    color: '#e8c09a',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['岬镜子', '岬 鏡子', 'みさき きょうこ', 'Misaki Kyoko'],
+    cg: ['misaki_kyoko_0.png', ' ', ' ', ' '],
+    month: 10,
+    day: 18,
+    color: '#99575c',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['鹰原羽依里', '鷹原 羽依里', 'たかはら はいり', 'Takahara Hairi'],
+    cg: ['takahara_hairi_0.png', ' ', ' ', ' '],
+    month: 5,
+    day: 21,
+    color: '#858584',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['稻荷', 'イナリ', 'Inari'],
+    cg: ['inari_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#0645ad',
+    from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
 ]
