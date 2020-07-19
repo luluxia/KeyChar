@@ -165,13 +165,13 @@ let app = new Vue({
     this.star()
 
     //往后获取生日最近的角色
-    let nowMonth = new Date().getMonth()
+    let nowMonth = new Date().getMonth() + 1
     let nowDay = new Date().getDate()
     let target = _.findIndex(this.data, item => {
-      return (item.month == nowMonth && item.day >= nowDay || item.month > nowMonth)
+      return ((item.month == nowMonth && item.day >= nowDay || item.month > nowMonth) && item.month != 13)
     })
-    if(!target){
-      target = 1
+    if(target == -1){
+      target = 0
     }
     this.nowTarget = target
 
