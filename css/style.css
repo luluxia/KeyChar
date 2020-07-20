@@ -330,7 +330,7 @@ img[lazy=loaded] {
     border-radius: 50%;
     margin: 0 auto;
     background: none;
-    border: 0.2em dashed #fff;
+    border: 0.1em dashed #fff;
     box-shadow: none;
   }
   .char-cg{
@@ -397,7 +397,7 @@ img[lazy=loaded] {
   }
   .char-m-info{
     width: 100%;
-    height: 8em;
+    height: 6em;
   }
   .char-m-left{
     position: absolute;
