@@ -117,6 +117,7 @@ img[lazy=loaded] {
   padding: 0.5em;
   margin-right: 0.5em;
   border-radius: 0.2em;
+  width: max-content;
 }
 .char-cg{
   display: flex;

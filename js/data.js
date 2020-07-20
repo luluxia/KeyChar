@@ -447,7 +447,7 @@ let data = [
     month: 1,
     day: 17,
     color: '#876e58',
-    from: ['Little Busters!'],
+    from: ['Little Busters!', 'Kud Wafter'],
     other: [
       '待补充'
     ]
@@ -491,7 +491,7 @@ let data = [
     month: 6,
     day: 12,
     color: '#d1b5cc',
-    from: ['Little Busters!'],
+    from: ['Little Busters!', 'Kud Wafter'],
     other: [
       '待补充'
     ]
@@ -524,7 +524,7 @@ let data = [
     month: 10,
     day: 13,
     color: '#d06ea1',
-    from: ['Little Busters!'],
+    from: ['Little Busters!', 'Kud Wafter'],
     other: [
       '待补充'
     ]
@@ -545,7 +545,7 @@ let data = [
     cg: ['tokido_saya_0.png', ' ', ' ', ' '],
     month: 10,
     day: 21,
-    color: '#f1d1a0',
+    color: '#d3a981',
     from: ['Little Busters!'],
     other: [
       '待补充'
@@ -585,11 +585,55 @@ let data = [
     ]
   },
   {
+    name: ['有月椎菜', '有月 椎菜', 'ありづき しいな', 'Arizuki Shiina'],
+    cg: ['arizuki_shiina_0.png', ' ', ' ', ' '],
+    month: 3,
+    day: 25,
+    color: '#df6c93',
+    from: ['Kud Wafter'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['冰室忧希', '氷室 憂希', 'ひむろ ゆうき', 'Himuro Yuuki'],
+    cg: ['himuro_yuuki_0.png', ' ', ' ', ' '],
+    month: 11,
+    day: 3,
+    color: '#797997',
+    from: ['Kud Wafter'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['阿酱前辈', 'あーちゃん先辈', 'あーちゃんせんぱい', 'A-chan Senpai'],
+    cg: ['achan_senpai_0.png', ' ', ' ', ' '],
+    month: 4,
+    day: 1,
+    color: '#8c4e58',
+    from: ['Kud Wafter'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['有月初', '有月 初', 'ありづき うい', 'Arizuki Ui'],
+    cg: ['arizuki_ui_0.png', ' ', ' ', ' '],
+    month: 7,
+    day: 16,
+    color: '#a07776',
+    from: ['Kud Wafter'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
     name: ['天王寺瑚太朗', '天王寺 瑚太朗', 'てんのうじ こたろう', 'Tennouji Kotarou'],
     cg: ['tennouji_kotarou_0.png', ' ', ' ', ' '],
     month: 5,
     day: 2,
-    color: '#000',
+    color: '#c65815',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -600,7 +644,7 @@ let data = [
     cg: ['kanbe_kotori_0.png', ' ', ' ', ' '],
     month: 7,
     day: 26,
-    color: '#000',
+    color: '#aa1c3e',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -611,7 +655,7 @@ let data = [
     cg: ['ohtori_chihaya_0.png', ' ', ' ', ' '],
     month: 8,
     day: 24,
-    color: '#000',
+    color: '#faa578',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -622,7 +666,7 @@ let data = [
     cg: ['senri_akane_0.png', ' ', ' ', ' '],
     month: 2,
     day: 17,
-    color: '#000',
+    color: '#a4746a',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -633,7 +677,7 @@ let data = [
     cg: ['nakatsu_sizuru_0.png', ' ', ' ', ' '],
     month: 6,
     day: 18,
-    color: '#000',
+    color: '#da9c3f',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -644,7 +688,7 @@ let data = [
     cg: ['konohana_lucia_0.png', ' ', ' ', ' '],
     month: 12,
     day: 23,
-    color: '#000',
+    color: '#8e79a2',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -655,7 +699,7 @@ let data = [
     cg: ['kagari_0.png', ' ', ' ', ' '],
     month: 13,
     day: 32,
-    color: '#000',
+    color: '#dfcfd8',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -666,7 +710,7 @@ let data = [
     cg: ['yoshino_haruhiko_0.png', ' ', ' ', ' '],
     month: 11,
     day: 7,
-    color: '#000',
+    color: '#716461',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -677,7 +721,7 @@ let data = [
     cg: ['ohtori_sakuya_0.png', ' ', ' ', ' '],
     month: 3,
     day: 27,
-    color: '#000',
+    color: '#565875',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -688,7 +732,7 @@ let data = [
     cg: ['inoue_akira_0.png', ' ', ' ', ' '],
     month: 3,
     day: 6,
-    color: '#000',
+    color: '#9c1f07',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -710,7 +754,7 @@ let data = [
     cg: ['nishikijou_touka_0.png', ' ', ' ', ' '],
     month: 7,
     day: 12,
-    color: '#000',
+    color: '#8e8db5',
     from: ['Rewrite'],
     other: [
       '待补充'
@@ -743,7 +787,7 @@ let data = [
     cg: ['shimako_0.png', ' ', ' ', ' '],
     month: 6,
     day: 13,
-    color: '#000',
+    color: '#616161',
     from: ['Rewrite'],
     other: [
       '待补充'
