@@ -120,6 +120,9 @@ img[lazy=loaded] {
   margin-bottom: 0.5em;
   list-style: none;
 }
+.char-work li:last-child{
+  margin-bottom: 0;
+}
 .char-cg{
   display: flex;
   justify-content: center;
@@ -297,7 +300,9 @@ img[lazy=loaded] {
 .char-pic li:nth-child(3){
   transition-delay: 0.4s;
 }
-
+.char-small-name{
+  font-size: 2em;
+}
 @media (max-width: 750px) {
   .main{
     flex-direction: column;
@@ -377,9 +382,6 @@ img[lazy=loaded] {
     height: 6em;
     margin-top: 1em;
   }
-  .char-title div{
-    width: 100%;
-  }
   .char-name{
     width: 100%;
     font-size: 2em;
@@ -392,5 +394,23 @@ img[lazy=loaded] {
   }
   .char-work li{
     background: #fff;
+  }
+  .char-m-info{
+    width: 100%;
+    height: 8em;
+  }
+  .char-m-left{
+    position: absolute;
+    left: 2em;
+    bottom: 0;
+  }
+  .char-m-right{
+    position: absolute;
+    right: 2em;
+    bottom: 0;
+    text-align: right;
+  }
+  .char-small-name{
+    font-size: 1.5em;
   }
 }

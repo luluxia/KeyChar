@@ -33,7 +33,7 @@
                   {{item.month + '月' + item.day + '日'}}
                   <span v-if="item.month == nowMonth && item.day == nowDay">，生日快乐！</span>
                 </p>
-                <h1 :style="{color: item.color}" class="char-name trans-name">{{item.name[0]}}</h1>
+                <h1 :style="{color: item.color}" class="char-name trans-name" :class="item.name[0].length >= 5 ? 'char-small-name' : ''">{{item.name[0]}}</h1>
                 <div class="char-fullname">
                   <p class="trans-name">{{item.name[1]}}</p>
                   <p class="trans-name">{{item.name[2]}}</p>
@@ -73,13 +73,28 @@
       <!-- 手机版人物信息 -->
       <div v-if="isPhone" class="char-title">
         <transition-group :name="direction" tag="div">
-          <div v-for="item in show" :key="item.name[0]">
-            <p v-if="item.month == 13" class="char-month">无</p>
-            <p v-else class="char-month">{{item.month + '月' + item.day + '日'}}</p>
-            <h1 :style="{color: item.color}" class="char-name">{{item.name[0]}}</h1>
-            <ul class="char-work">
-              <li v-for="info in item.from">{{info}}</li>
-            </ul>
+          <div class="char-m-info" v-for="item in show" :key="item.name[0]">
+            <div class="char-m-left">
+              <div class="char-fullname">
+                <p>{{item.name[1]}}</p>
+                <p>{{item.name[2]}}</p>
+                <p>{{item.name[3]}}</p>
+              </div>
+              <ul class="char-info">
+                <li v-for="info in item.other">{{info}}</li>
+              </ul>
+              <ul class="char-work">
+                <li v-for="info in item.from">{{info}}</li>
+              </ul>
+            </div>
+            <div class="char-m-right">
+              <p v-if="item.month == 13" class="char-month">无</p>
+              <p v-else class="char-month">
+                {{item.month + '月' + item.day + '日'}}
+                <span v-if="item.month == nowMonth && item.day == nowDay">，生日快乐！</span>
+              </p>
+              <h1 :style="{color: item.color}" class="char-name" :class="item.name[0].length >= 5 ? 'char-small-name' : ''">{{item.name[0]}}</h1>
+            </div>
           </div>
         </transition-group>
       </div>
