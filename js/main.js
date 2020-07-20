@@ -18,6 +18,9 @@ let app = new Vue({
     itemWidth: 0,   //时间轴图标宽度
     isPhone: 0,     //是否为手机端
 
+    nowMonth: 0,
+    nowDay:0,
+
     touchX: 0,      //触控坐标
   },
   methods: {
@@ -165,10 +168,10 @@ let app = new Vue({
     this.star()
 
     //往后获取生日最近的角色
-    let nowMonth = new Date().getMonth() + 1
-    let nowDay = new Date().getDate()
+    this.nowMonth = new Date().getMonth() + 1
+    this.nowDay = new Date().getDate()
     let target = _.findIndex(this.data, item => {
-      return ((item.month == nowMonth && item.day >= nowDay || item.month > nowMonth) && item.month != 13)
+      return ((item.month == this.nowMonth && item.day >= this.nowDay || item.month > this.nowMonth) && item.month != 13)
     })
     if(target == -1){
       target = 0

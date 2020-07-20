@@ -887,7 +887,7 @@ let data = [
     month: 7,
     day: 4,
     color: '#d32258',
-    from: ['Summer Pockets'],
+    from: ['Summer Pockets REFLECTION BLUE'],
     other: [
       '待补充'
     ]

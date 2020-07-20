@@ -112,12 +112,13 @@ img[lazy=loaded] {
 }
 .char-work li{
   font-size: 0.8em;
-  display: inline-block;
   background: #eee;
   padding: 0.5em;
   margin-right: 0.5em;
   border-radius: 0.2em;
   width: max-content;
+  margin-bottom: 0.5em;
+  list-style: none;
 }
 .char-cg{
   display: flex;

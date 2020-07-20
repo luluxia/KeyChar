@@ -29,7 +29,10 @@
             <transition-group name="test" tag="div" :duration="{ enter: 1000, leave: 500 }" class="char-title-content">
               <div v-for="item in show" :key="item.name[0]">
                 <p v-if="item.month == 13" class="char-month trans-name">无</p>
-                <p v-else class="char-month trans-name">{{item.month + '月' + item.day + '日'}}</p>
+                <p v-else class="char-month trans-name">
+                  {{item.month + '月' + item.day + '日'}}
+                  <span v-if="item.month == nowMonth && item.day == nowDay">，生日快乐！</span>
+                </p>
                 <h1 :style="{color: item.color}" class="char-name trans-name">{{item.name[0]}}</h1>
                 <div class="char-fullname">
                   <p class="trans-name">{{item.name[1]}}</p>
