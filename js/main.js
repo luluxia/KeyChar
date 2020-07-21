@@ -1,42 +1,27 @@
+Vue.use(VueLazyload, {
+  observer: true
+})
 let app = new Vue({
   el: "#app",
   data: {
-    data: [
-      {
-        Name: ['伊吹风子', '伊吹 風子', 'いぶき ふうこ', 'Ibuki Fuko'],
-        CG: 'test2.png',
-        Pic: ['pic.jpg', 'pic.jpg', 'pic.jpg'],
-        Month: 7,
-        Day: 20,
-        Color: '#3c6e3c'
-      },
-      {
-        Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
-        CG: 'test.png',
-        Pic: ['pic2.jpg', 'pic2.jpg', 'pic2.jpg'],
-        Month: 12,
-        Day: 24,
-        Color: '#dc3c78'
-      }
-    ],
-    show: [
-      {
-        Name: ['古河渚', '古河 渚', 'ふるかわ なぎさ', 'Furukawa Nagisa'],
-        CG: 'test.png',
-        Pic: ['pic2.jpg', 'pic2.jpg', 'pic2.jpg'],
-        Month: 12,
-        Day: 24,
-        Color: '#dc3c78'
-      }
-    ],
-    sliderMove: 0,
-    sliderX: 0,
-    sliderChange: 0,
-    pastX: 0,
-    mouseX: 0,
-    middle: 0,
-    lastTarget: 0,
-    direction: '',
+    data: null,     //整理后的数据
+    dataByMonth: [],
+    show: [],
+    sliderMove: 1,  //控制时间轴动画
+    sliderX: 0,     //时间轴坐标
+    sliderChange: 0,//时间轴是否发生移动
+    pastX: 0,       //过去的坐标
+    mouseX: 0,      //鼠标坐标
+    middle: 0,      //网页中心点
+    nowTarget: 0,   //目前显示对象
+    direction: '',  //动画方向
+    itemWidth: 0,   //时间轴图标宽度
+    isPhone: 0,     //是否为手机端
+
+    nowMonth: 0,
+    nowDay:0,
+
+    touchX: 0,      //触控坐标
   },
   methods: {
     star() {
@@ -81,7 +66,7 @@ let app = new Vue({
           }
       }
       let create = () => {
-          var e=c.getContext("2d");
+          let e=c.getContext("2d");
           e.lineCap="round";
           setInterval(() => {
               star(e);
@@ -96,48 +81,143 @@ let app = new Vue({
       this.pastX = this.sliderX
     },
     slider_move(event) {
-      let changeX
       if(this.sliderMove){
-        this.sliderChange = 1
+        let changeX
         changeX = this.mouseX - event.clientX
+        if(this.sliderX != this.pastX - changeX){
+          this.sliderChange = 1
+        }
         this.sliderX = this.pastX - changeX
       }
     },
     slider_up() {
       this.sliderMove = 0
       let items = document.querySelectorAll('.slider-item')
-      let itemWidth = items[0].clientWidth / 2
       let target = 0
-      let targetWidth = Math.abs(items[0].getBoundingClientRect().left + itemWidth - this.middle)
+      let targetWidth = Math.abs(items[0].getBoundingClientRect().left + this.itemWidth - this.middle)
       items.forEach((item, index) => {
-        let width = Math.abs(item.getBoundingClientRect().left + itemWidth - this.middle)
+        let width = Math.abs(item.getBoundingClientRect().left + this.itemWidth - this.middle)
         if(width < targetWidth){
           target = index
           targetWidth = width
         }
       })
-      this.sliderX = this.middle - items[target].offsetLeft - itemWidth
-      if(target > this.lastTarget){
-        this.direction = 'right'
-      }else{
+      this.sliderX = this.middle - items[target].offsetLeft - this.itemWidth
+      if(target > this.nowTarget){
         this.direction = 'left'
+      }else{
+        this.direction = 'right'
       }
-      this.lastTarget = target
+      this.nowTarget = target
       this.show.pop()
       this.show.push(this.data[items[target].dataset.id])
     },
     choose(event) {
       console.log(this.sliderChange)
       if(!this.sliderChange){
-        let itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
-        this.sliderX = this.middle - event.currentTarget.offsetLeft - itemWidth
+        this.sliderX = this.middle - event.currentTarget.offsetLeft - this.itemWidth
+        if(event.currentTarget.dataset.id > this.nowTarget){
+          this.direction = 'left'
+        }else{
+          this.direction = 'right'
+        }
+        this.nowTarget = event.currentTarget.dataset.id
         this.show.pop()
         this.show.push(this.data[event.currentTarget.dataset.id])
       }
+    },
+
+    touch_down(event){
+      this.touchX = event.changedTouches[0].clientX
+    },
+    touch_move(event){
+      // console.log(event.changedTouches[0].clientX - this.touchX)
+      if(event.changedTouches[0].clientX - this.touchX >= 80 && this.nowTarget != 0){
+        this.direction = 'right'
+        this.nowTarget--
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+        this.show.pop()
+        this.show.push(this.data[this.nowTarget])
+
+        this.touchX = event.changedTouches[0].clientX
+      }else if(event.changedTouches[0].clientX - this.touchX <= -80 && this.nowTarget != this.data.length - 1){
+        this.direction = 'left'
+        this.nowTarget++
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+        this.show.pop()
+        this.show.push(this.data[this.nowTarget])
+
+        this.touchX = event.changedTouches[0].clientX
+      }
+    },
+    touch_up(event){
+
     }
   },
   mounted() {
+    //初始化
+    this.data = _.sortBy(data, ['month', 'day', 'name[3]'])
+
+    //按月份排序
+    // this.dataByMonth = Array.from({length:13},()=>[])
+    // this.data.forEach(item => {
+    //   this.dataByMonth[item.month - 1].push(item)
+    // })
+
     this.middle = document.body.clientWidth / 2
     this.star()
+
+    //往后获取生日最近的角色
+    this.nowMonth = new Date().getMonth() + 1
+    this.nowDay = new Date().getDate()
+    let target = _.findIndex(this.data, item => {
+      return ((item.month == this.nowMonth && item.day >= this.nowDay || item.month > this.nowMonth) && item.month != 13)
+    })
+    if(target == -1){
+      target = 0
+    }
+    this.nowTarget = target
+
+    //完成时间轴并跳转至生日最近的角色
+    this.$nextTick(() => {
+      let months = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10 ,11, 12, 13]
+      months.forEach(item => {
+        if(document.querySelector('li[data-month="' + item +'"]')){
+          let el = document.querySelector('li[data-month="' + item +'"]')
+          if(item == 13){
+            el.insertAdjacentHTML('beforeBegin', '<li class="slider-month">无</li>')
+          }else{
+            el.insertAdjacentHTML('beforeBegin', '<li class="slider-month">' + item + '月</li>')
+          }
+        }
+      })
+      this.itemWidth = document.querySelectorAll('.slider-item')[0].clientWidth / 2
+      this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+      this.show.push(this.data[this.nowTarget])
+      setTimeout(() => {
+        this.sliderMove = 0
+      }, 300)
+    })
+
+    //滚轮事件
+    window.addEventListener('wheel', _.debounce(event => {
+      if(event.deltaY > 0 && this.nowTarget != this.data.length - 1){
+        this.direction = 'left'
+        this.nowTarget++
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+        this.show.pop()
+        this.show.push(this.data[this.nowTarget])
+      }else if(event.deltaY < 0 && this.nowTarget != 0){
+        this.direction = 'right'
+        this.nowTarget--
+        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+        this.show.pop()
+        this.show.push(this.data[this.nowTarget])
+      }
+    }, 100))
+
+    if(document.body.clientWidth < 700){
+      this.isPhone = 1
+    }
   }
 })

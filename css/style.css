@@ -6,6 +6,12 @@
   position: relative;
   box-sizing: border-box;
 }
+[v-cloak] {
+  display: none;
+}
+body{
+  touch-action: none;
+}
 html, body, #app{
   width: 100%;
   height: 100%;
@@ -13,11 +19,19 @@ html, body, #app{
 #app{
   color: #333;
   background: #eee;
+  overflow: hidden;
 }
 #star{
   position: fixed;
   transition: opacity 1s;
   opacity: 0.8;
+}
+img[lazy=loading]{
+  opacity: 0;
+}
+img[lazy=loaded] {
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 .logo{
   position: absolute;
@@ -87,6 +101,28 @@ html, body, #app{
 .char-fullname p{
   width: max-content;
 }
+.char-info li{
+  font-size: 0.8em;
+  line-height: 1.5em;
+  width: max-content;
+  list-style: none;
+}
+.char-work{
+  margin-top: 1em;
+}
+.char-work li{
+  font-size: 0.8em;
+  background: #eee;
+  padding: 0.5em;
+  margin-right: 0.5em;
+  border-radius: 0.2em;
+  width: max-content;
+  margin-bottom: 0.5em;
+  list-style: none;
+}
+.char-work li:last-child{
+  margin-bottom: 0;
+}
 .char-cg{
   display: flex;
   justify-content: center;
@@ -117,12 +153,17 @@ html, body, #app{
   height: 6em;
   border: 1px solid #b1b1b1;
 }
+.char-pic li:hover .char-pic-item{
+  transform: scale(1);
+  opacity: 1;
+}
 .char-pics img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   transform: scale(0.9);
   opacity: 0.7;
+  transition: transform 0.3s, opacity 0.3s;
 }
 .slider{
   height: 8em;
@@ -173,6 +214,7 @@ html, body, #app{
   font-weight: bold;
   font-size: 2em;
   color: #888;
+  width: max-content;
 }
 
 .trans-name::before{
@@ -257,4 +299,119 @@ html, body, #app{
 }
 .char-pic li:nth-child(3){
   transition-delay: 0.4s;
+}
+.char-small-name{
+  font-size: 2em;
+}
+@media (max-width: 750px) {
+  .main{
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100% - 5em);
+  }
+  .slider{
+    height: 5em;
+  }
+  .slider-icon{
+    height: 4em;
+    width: 4em;
+  }
+  .slider-content li{
+    margin: 0 0.8em;
+  }
+  .slider-month{
+    font-size: 1.5em;
+    margin: 0 0.4em !important;
+  }
+
+  .card{
+    width: 90vw;
+    height: 90vw;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: none;
+    border: 0.1em dashed #fff;
+    box-shadow: none;
+  }
+  .char-cg{
+    width: 100%;
+    height: calc(100% + 2em);
+    position: absolute;
+    bottom: 0;
+  }
+  .char-img{
+    height: 100%;
+  }
+  .char-img img{
+    height: 100%;
+  }
+  .char-cg-m-top{
+    overflow: hidden;
+    border-radius: 0 0 50% 50%;
+  }
+  .char-cg-m-bottom{
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .char-cg-m-bottom .char-img{
+    /* 修复微信的傻逼BUG */
+    height: calc(100% + 0.01px);
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .char-cg-m-bottom img{
+    height: calc(100% + 2em);
+    position: absolute;
+    bottom: 0;
+  }
+
+  .round{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .char-title{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 6em;
+    margin-top: 1em;
+    z-index: 2;
+  }
+  .char-name{
+    width: 100%;
+    font-size: 2em;
+  }
+  .char-month{
+    margin-bottom: 0;
+  }
+  .char-work{
+    margin-top: 0.3em;
+  }
+  .char-work li{
+    background: #fff;
+  }
+  .char-m-info{
+    width: 100%;
+    height: 6em;
+  }
+  .char-m-left{
+    position: absolute;
+    left: 2em;
+    bottom: 0;
+  }
+  .char-m-right{
+    position: absolute;
+    right: 2em;
+    bottom: 0;
+    text-align: right;
+  }
+  .char-small-name{
+    font-size: 1.5em;
+  }
 }
