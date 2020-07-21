@@ -381,6 +381,7 @@ img[lazy=loaded] {
     position: relative;
     height: 6em;
     margin-top: 1em;
+    z-index: 2;
   }
   .char-name{
     width: 100%;
