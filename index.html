@@ -100,7 +100,7 @@
       </div>
     </div>
     <!-- 时间轴 -->
-    <div :style="{cursor: sliderChange ? 'grabbing' : 'grab'}" @mouseleave="slider_up" @mousedown="slider_down" @mousemove="slider_move" @mouseup="slider_up" v-if="data" class="slider">
+    <div :style="{cursor: sliderChange && sliderMove ? 'grabbing' : 'grab'}" @mouseleave="slider_up" @mousedown="slider_down" @mousemove="slider_move" @mouseup="slider_up" v-if="data" class="slider">
       <div :style="{transform: 'translate(' + sliderX + 'px ,0)', transition: sliderMove ? '' : 'transform 0.3s'}" class="slider-content">
         <ul class="slider-list">
           <li @click="choose" :data-id="index" :data-month="item.month" v-for="(item, index) in data" class="slider-item">
