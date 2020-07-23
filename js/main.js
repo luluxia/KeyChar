@@ -11,6 +11,7 @@ let app = new Vue({
     sliderX: 0,     //时间轴坐标
     sliderChange: 0,//时间轴是否发生移动
     pastX: 0,       //过去的坐标
+    changeX: 0,     
     mouseX: 0,      //鼠标坐标
     middle: 0,      //网页中心点
     nowTarget: 0,   //目前显示对象
@@ -82,13 +83,16 @@ let app = new Vue({
     },
     slider_move(event) {
       if(this.sliderMove){
-        let changeX
-        changeX = this.mouseX - event.clientX
-        if(this.sliderX != this.pastX - changeX){
+        this.changeX = this.mouseX - event.clientX
+        if(this.sliderX != this.pastX - this.changeX){
           this.sliderChange = 1
         }
-        this.sliderX = this.pastX - changeX
+        // this.sliderX = this.pastX - changeX
+        // this.sliderX = this.sliderX + ((this.pastX - changeX) - this.sliderX) * 0.1
       }
+    },
+    slider_change() {
+      this.sliderX = this.sliderX + ((this.pastX - this.changeX) - this.sliderX) * 0.2
     },
     slider_up() {
       this.sliderMove = 0
@@ -155,6 +159,13 @@ let app = new Vue({
     }
   },
   mounted() {
+    let render = () => {
+      if(this.sliderMove && this.sliderChange){
+        this.slider_change()
+      }
+      requestAnimationFrame(render)
+    }
+    render()
     //初始化
     this.data = _.sortBy(data, ['month', 'day', 'name[3]'])
 
