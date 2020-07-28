@@ -170,10 +170,10 @@ let app = new Vue({
     this.data = _.sortBy(data, ['month', 'day', 'name[3]'])
 
     //按月份排序
-    // this.dataByMonth = Array.from({length:13},()=>[])
-    // this.data.forEach(item => {
-    //   this.dataByMonth[item.month - 1].push(item)
-    // })
+    this.dataByMonth = Array.from({length:13},()=>[])
+    this.data.forEach(item => {
+      this.dataByMonth[item.month - 1].push(item)
+    })
 
     this.middle = document.body.clientWidth / 2
     this.star()
