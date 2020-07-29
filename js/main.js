@@ -6,6 +6,8 @@ let app = new Vue({
   data: {
     data: null,     //整理后的数据
     dataByMonth: [],
+    dataByProduct: {},
+    sortBy: 0,
     show: [],
     sliderMove: 1,  //控制时间轴动画
     sliderX: 0,     //时间轴坐标
@@ -23,6 +25,9 @@ let app = new Vue({
     nowDay:0,
 
     touchX: 0,      //触控坐标
+
+    inCover: 0,
+    sort: 0,
   },
   methods: {
     star() {
@@ -130,7 +135,19 @@ let app = new Vue({
         this.show.push(this.data[event.currentTarget.dataset.id])
       }
     },
+    allChoose(id){
+      let target = document.querySelector("li[data-id='" + id + "']")
 
+      this.sliderX = this.middle - target.offsetLeft - this.itemWidth
+      if(target.dataset.id > this.nowTarget){
+        this.direction = 'left'
+      }else{
+        this.direction = 'right'
+      }
+      this.nowTarget = target.dataset.id
+      this.show.pop()
+      this.show.push(this.data[target.dataset.id])
+    },
     touch_down(event){
       this.touchX = event.changedTouches[0].clientX
     },
@@ -156,6 +173,16 @@ let app = new Vue({
     },
     touch_up(event){
 
+    },
+    openAll(){
+      this.inCover = 1
+    },
+    closeCover(){
+      this.inCover = 0
+    },
+    changeSort(e){
+      this.sort = e
+      event.stopPropagation()
     }
   },
   mounted() {
@@ -171,9 +198,18 @@ let app = new Vue({
 
     //按月份排序
     this.dataByMonth = Array.from({length:13},()=>[])
-    this.data.forEach(item => {
-      this.dataByMonth[item.month - 1].push(item)
+    products.forEach(product => {
+      this.dataByProduct[product] = []
     })
+    this.data.forEach((item, index) => {
+      item.id = index
+      this.dataByMonth[item.month - 1].push(item)
+      item.from.forEach(product => {
+        this.dataByProduct[product].push(item)
+      })
+    })
+
+    //按作品排序
 
     this.middle = document.body.clientWidth / 2
     this.star()
@@ -212,18 +248,20 @@ let app = new Vue({
 
     //滚轮事件
     window.addEventListener('wheel', _.debounce(event => {
-      if(event.deltaY > 0 && this.nowTarget != this.data.length - 1){
-        this.direction = 'left'
-        this.nowTarget++
-        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
-        this.show.pop()
-        this.show.push(this.data[this.nowTarget])
-      }else if(event.deltaY < 0 && this.nowTarget != 0){
-        this.direction = 'right'
-        this.nowTarget--
-        this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
-        this.show.pop()
-        this.show.push(this.data[this.nowTarget])
+      if(!this.inCover){
+        if(event.deltaY > 0 && this.nowTarget != this.data.length - 1){
+          this.direction = 'left'
+          this.nowTarget++
+          this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+          this.show.pop()
+          this.show.push(this.data[this.nowTarget])
+        }else if(event.deltaY < 0 && this.nowTarget != 0){
+          this.direction = 'right'
+          this.nowTarget--
+          this.sliderX = this.middle - document.querySelector('li[data-id="' + this.nowTarget +'"]').offsetLeft - this.itemWidth
+          this.show.pop()
+          this.show.push(this.data[this.nowTarget])
+        }
       }
     }, 100))
 

@@ -11,6 +11,7 @@
 }
 body{
   touch-action: none;
+  font-family: Microsoft YaHei;
 }
 html, body, #app{
   width: 100%;
@@ -39,38 +40,69 @@ img[lazy=loaded] {
   width: 100%;
   padding: 2em;
   text-align: right;
-  z-index: 1;
+  z-index: 3;
 }
 .menu i{
   cursor: pointer;
   font-size: 1.5em;
   color: #8d8d8d;
 }
-/* 总览 */
-.all{
+/* 遮罩 */
+.cover{
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.7);
-  /* backdrop-filter: blur(5px); */
   z-index: 3;
   padding: 3em;
   overflow-y: auto;
+  transition: opacity 0.3s;
+}
+.cover-bg{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+.cover-content{
+  transition: transform 0.3s;
+}
+/* 遮罩隐藏 */
+.cover-hide{
+  opacity: 0;
+  pointer-events: none;
+}
+.cover-hide .cover-content{
+  transform: translate(0, 1em);
 }
 .all-header h1{
   font-weight: lighter;
   font-size: 3em;
   letter-spacing: 0.1em;
 }
+.all-sort{
+  margin-bottom: 2em;
+}
 .all-sort span{
-  display: block;
   font-size: 0.8em;
   margin-bottom: 0.5em;
 }
+.all-active::after{
+  content: '';
+  width: 100%;
+  height: 0.1em;
+  background: #65cdff;
+  display: block;
+}
+.all-sort ul{
+  display: inline-block;
+}
 .all-sort li{
   display: inline-block;
+  cursor: pointer;
 }
 .all-content ul{
   height: fit-content !important;
@@ -81,10 +113,10 @@ img[lazy=loaded] {
 .all-char-list h2{
   font-size: 1em;
   font-weight: normal;
-  margin: 1em 0;
+  margin-bottom: 1em;
 }
 .all-char-item{
-  border: 2px solid #6c6c6c;
+  border: 1px solid #ccc;
   padding: 0.5em;
   border-radius: 0.2em;
   height: 8em;
@@ -94,6 +126,14 @@ img[lazy=loaded] {
   padding-bottom: 0;
   display: inline-flex;
   justify-content: center;
+  background: rgb(255 255 255 / 0.7);
+  margin-bottom: 1em;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.all-char-item:hover{
+  transform: translate(0, -0.5em);
+  box-shadow: 0 5px 10px -5px rgb(0 0 0 / 0.3);
 }
 .all-char-item img{
   height: 100%;
@@ -380,6 +420,9 @@ img[lazy=loaded] {
     flex-direction: column;
     justify-content: center;
     height: calc(100% - 5em);
+  }
+  .cover{
+    padding: 1em;
   }
   .slider{
     height: 5em;

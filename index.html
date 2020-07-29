@@ -15,53 +15,62 @@
   <div id="app" @touchstart="touch_down" @touchmove="touch_move" @touchend="touch_up" v-cloak>
     <!-- 菜单 -->
     <div class="menu">
-      <i class="iconfont icon-all"></i>
+      <i @click="openAll" class="iconfont icon-all"></i>
     </div>
     <!-- 背景 -->
     <canvas id="star"></canvas>
     <!-- 总览 -->
-    <div class="all">
-      <!-- 总览header -->
-      <div class="all-header">
-        <h1>Characters</h1>
-        <div class="all-sort">
-          <span>Sort by</span>
-          <ul>
-            <li>Month</li>
-            <li>Product</li>
-          </ul>
+    <div @click="inCover = 0" :class="[inCover ? '' : 'cover-hide', 'cover']">
+      <div class="cover-bg"></div>
+      <div class="cover-content">
+        <!-- 总览header -->
+        <div class="all-header">
+          <h1>Character</h1>
+          <div class="all-sort">
+            <span>Sort by</span>
+            <ul>
+              <li @click="changeSort(0)" :class="[sort == 0 ? 'all-active' : '']">Month</li>
+              <li @click="changeSort(1)" :class="[sort == 1 ? 'all-active' : '']">Product</li>
+            </ul>
+          </div>
         </div>
+        <!-- 总览角色 -->
+        <ul class="all-chars">
+          <li v-if="sort == 0" v-for="(list, index) in dataByMonth" class="all-char-list">
+            <h2 v-if="index == 12">无</h2>
+            <h2 v-else>{{index + 1}}月</h2>
+            <ul class="all-char-items">
+              <li @click="allChoose(item.id)" v-for="item in list" class="all-char-item">
+                <img v-lazy="'img/' + item.cg[0]" alt="">
+                <div :style="{
+                  backgroundImage: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, ' + item.color + ' 80%)', 
+                  textShadow: '0px 0px 3px ' + item.color
+                }" class="all-char-info">
+                  <p v-if="item.day == 32">无</p>
+                  <p v-else>{{item.day}}日</p>
+                  <p class="all-char-name">{{item.name[0]}}</p>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li v-if="sort == 1" v-for="(list, key) in dataByProduct" class="all-char-list">
+            <h2>{{key}}</h2>
+            <ul class="all-char-items">
+              <li @click="allChoose(item.id)" v-for="item in list" class="all-char-item">
+                <img v-lazy="'img/' + item.cg[0]" alt="">
+                <div :style="{
+                  backgroundImage: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, ' + item.color + ' 80%)', 
+                  textShadow: '0px 0px 3px ' + item.color
+                }" class="all-char-info">
+                  <p v-if="item.month == 13">无</p>
+                  <p v-else>{{item.month}}月{{item.day}}日</p>
+                  <p class="all-char-name">{{item.name[0]}}</p>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
-      <!-- 总览角色 -->
-      <ul class="all-chars">
-        <!-- <li class="all-char-list">
-          <h2>1月</h2>
-          <ul class="all-char-items">
-            <li class="all-char-item">
-              <img src="img/furukawa_nagisa_0.png" alt="">
-              <div class="all-char-info">
-                <p>24日</p>
-                <p class="all-char-name">古河渚</p>
-              </div>
-            </li>
-          </ul>
-        </li> -->
-        <li v-for="(list, index) in dataByMonth" class="all-char-list">
-          <h2>{{index + 1}}月</h2>
-          <ul class="all-char-items">
-            <li v-for="item in list" class="all-char-item">
-              <img v-lazy="'img/' + item.cg[0]" alt="">
-              <div :style="{
-                backgroundImage: 'linear-gradient(to bottom, #ffffff00 10%, ' + item.color + ' 100%)', 
-                textShadow: '0px 0px 5px ' + item.color
-              }" class="all-char-info">
-                <p>{{item.day}}日</p>
-                <p class="all-char-name">{{item.name[0]}}</p>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
     </div>
     <!-- 主体 -->
     <div class="main">
