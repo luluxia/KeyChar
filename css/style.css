@@ -11,6 +11,7 @@
 }
 body{
   touch-action: none;
+  font-family: Microsoft YaHei;
 }
 html, body, #app{
   width: 100%;
@@ -33,22 +34,127 @@ img[lazy=loaded] {
   opacity: 1;
   transition: opacity 0.3s;
 }
-.logo{
+/* 菜单 */
+.menu{
   position: absolute;
-  right: 2em;
-  top: 2em;
-  display: flex;
-  align-items: center;
-  display: none;
+  width: 100%;
+  padding: 2em;
+  text-align: right;
+  z-index: 3;
 }
-.logo img{
-  width: 5em;
+.menu i{
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #8d8d8d;
 }
-.logo p{
-  font-weight: bold;
+/* 遮罩 */
+.cover{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 3em;
+  overflow-y: auto;
+  transition: opacity 0.3s;
+}
+.cover-bg{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+.cover-content{
+  transition: transform 0.3s;
+}
+/* 遮罩隐藏 */
+.cover-hide{
+  opacity: 0;
+  pointer-events: none;
+}
+.cover-hide .cover-content{
+  transform: translate(0, 1em);
+}
+.all-header h1{
+  font-weight: lighter;
+  font-size: 3em;
   letter-spacing: 0.1em;
-  margin-left: 0.5em;
 }
+.all-sort{
+  margin-bottom: 2em;
+}
+.all-sort span{
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+.all-active::after{
+  content: '';
+  width: 100%;
+  height: 0.1em;
+  background: #65cdff;
+  display: block;
+}
+.all-sort ul{
+  display: inline-block;
+}
+.all-sort li{
+  display: inline-block;
+  cursor: pointer;
+}
+.all-content ul{
+  height: fit-content !important;
+}
+.all-char-list{
+  list-style: none;
+}
+.all-char-list h2{
+  font-size: 1em;
+  font-weight: normal;
+  margin-bottom: 1em;
+}
+.all-char-item{
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  height: 8em;
+  width: 6em;
+  margin-right: 1em;
+  overflow: hidden;
+  padding-bottom: 0;
+  display: inline-flex;
+  justify-content: center;
+  background: rgb(255 255 255 / 0.7);
+  margin-bottom: 1em;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.all-char-item:hover{
+  transform: translate(0, -0.5em);
+  box-shadow: 0 5px 10px -5px rgb(0 0 0 / 0.3);
+}
+.all-char-item img{
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+.all-char-info{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  text-shadow: 0px 0px 5px #dc3c78;
+  width: 100%;
+  background-image: linear-gradient(to bottom, #ffffff00 10%, #dc3c78 100%);
+  padding: 0.2em;
+}
+.all-char-name{
+  font-weight: bold;
+}
+/* 主体 */
 .main{
   display: flex;
   align-items: center;
@@ -62,6 +168,7 @@ img[lazy=loaded] {
   align-items: center;
   box-shadow: 0 0 20px -15px rgba(0, 0, 0, 0.2);
 }
+/* 内容区域 */
 .char{
   display: flex;
   justify-content: center;
@@ -73,6 +180,7 @@ img[lazy=loaded] {
 .char-title, .char-pics{
   position: absolute;
 }
+/* 左侧信息 */
 .char-title{
   left: 0;
 }
@@ -123,6 +231,7 @@ img[lazy=loaded] {
 .char-work li:last-child{
   margin-bottom: 0;
 }
+/* 立绘 */
 .char-cg{
   display: flex;
   justify-content: center;
@@ -141,6 +250,7 @@ img[lazy=loaded] {
   height: 28em;
   bottom: 0;
 }
+/* CG */
 .char-pics{
   right: 0;
   width: 6em;
@@ -165,6 +275,7 @@ img[lazy=loaded] {
   opacity: 0.7;
   transition: transform 0.3s, opacity 0.3s;
 }
+/* 时间轴 */
 .slider{
   height: 8em;
   background-color: rgba(238, 238, 238, 0.5);
@@ -216,7 +327,7 @@ img[lazy=loaded] {
   color: #888;
   width: max-content;
 }
-
+/* 文字过渡 */
 .trans-name::before{
   content: "";
   position: absolute;
@@ -254,7 +365,7 @@ img[lazy=loaded] {
 .test-leave-to .trans-name::before{
   transform: translate(0, 0);
 }
-
+/* 立绘过渡 */
 .left-enter-active, .left-leave-active{
   position: absolute;
   transition: all 1s;
@@ -282,7 +393,7 @@ img[lazy=loaded] {
 .right-leave-to{
   transform: translate(20px, 0);
 }
-
+/* CG过渡 */
 .pic-enter-active, .pic-leave-active{
   position: absolute;
 }
@@ -303,11 +414,15 @@ img[lazy=loaded] {
 .char-small-name{
   font-size: 2em;
 }
+/* 移动端 */
 @media (max-width: 750px) {
   .main{
     flex-direction: column;
     justify-content: center;
     height: calc(100% - 5em);
+  }
+  .cover{
+    padding: 1em;
   }
   .slider{
     height: 5em;
