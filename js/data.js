@@ -315,7 +315,7 @@ let data = [
     cg: ['uraha_0.png', ' ', ' ', ' '],
     month: 13,
     day: 32,
-    color: '#0D130E',
+    color: '#667770',
     from: ['AIR'],
     other: [
       '待补充'
@@ -739,17 +739,17 @@ let data = [
       '待补充'
     ]
   },
-  // {
-  //   name: ['江坂宗源', '江坂 宗源', 'えさか そうげん', 'Esaka Sougen'],
-  //   cg: ['esaka_sougen_0.png', ' ', ' ', ' '],
-  //   month: 13,
-  //   day: 32,
-  //   color: '#000',
-  //   from: ['Rewrite'],
-  //   other: [
-  //     '待补充'
-  //   ]
-  // },
+  {
+    name: ['江坂宗源', '江坂 宗源', 'えさか そうげん', 'Esaka Sougen'],
+    cg: ['esaka_sougen_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#4d3b36',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
   {
     name: ['西九条灯花', '西九条 灯花', 'にしくじょう とうか', 'Nishikujou Touka'],
     cg: ['nishikijou_touka_0.png', ' ', ' ', ' '],
@@ -761,28 +761,28 @@ let data = [
       '待补充'
     ]
   },
-  // {
-  //   name: ['御堂', 'ミドウ', 'Midow'],
-  //   cg: ['midow_0.png', ' ', ' ', ' '],
-  //   month: 13,
-  //   day: 32,
-  //   color: '#000',
-  //   from: ['Rewrite'],
-  //   other: [
-  //     '待补充'
-  //   ]
-  // },
-  // {
-  //   name: ['今宫新', '今宮 新', 'いまみや あらた', 'Imamiya Arata'],
-  //   cg: ['imamiya_arata_0.png', ' ', ' ', ' '],
-  //   month: 13,
-  //   day: 32,
-  //   color: '#000',
-  //   from: ['Rewrite'],
-  //   other: [
-  //     '待补充'
-  //   ]
-  // },
+  {
+    name: ['御堂', 'ミドウ', 'Midow'],
+    cg: ['midow_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#cc2124',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['今宫新', '今宮 新', 'いまみや あらた', 'Imamiya Arata'],
+    cg: ['imamiya_arata_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#fc9239',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
   {
     name: ['志麻子', 'しまこ', 'Shimako'],
     cg: ['shimako_0.png', ' ', ' ', ' '],
@@ -794,17 +794,17 @@ let data = [
       '待补充'
     ]
   },
-  // {
-  //   name: ['琪比摩斯', 'ちびもす', 'Chibi-Moth'],
-  //   cg: ['chibi_moth_0.png', ' ', ' ', ' '],
-  //   month: 13,
-  //   day: 32,
-  //   color: '#000',
-  //   from: ['Rewrite'],
-  //   other: [
-  //     '待补充'
-  //   ]
-  // },
+  {
+    name: ['琪比摩斯', 'ちびもす', 'Chibi-Moth'],
+    cg: ['chibi_moth_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#f699a0',
+    from: ['Rewrite'],
+    other: [
+      '待补充'
+    ]
+  },
   {
     name: ['鸣濑白羽', '鳴瀬 しろは', 'なるせ しろは', 'Naruse Shiroha'],
     cg: ['naruse_shiroha_0.png', ' ', ' ', ' '],

@@ -201,6 +201,7 @@ let app = new Vue({
     products.forEach(product => {
       this.dataByProduct[product] = []
     })
+    //按作品排序
     this.data.forEach((item, index) => {
       item.id = index
       this.dataByMonth[item.month - 1].push(item)
@@ -208,8 +209,6 @@ let app = new Vue({
         this.dataByProduct[product].push(item)
       })
     })
-
-    //按作品排序
 
     this.middle = document.body.clientWidth / 2
     this.star()
