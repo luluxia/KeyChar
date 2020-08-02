@@ -356,7 +356,7 @@ let data = [
   },
   {
     name: ['泽渡真琴', '沢渡 真琴', 'さわたり まこと', 'Sawatari Makoto'],
-    cg: ['sawatari_makoto_0.png', ' ', ' ', ' '],
+    cg: ['sawatari_makoto_0.png', 'sawatari_makoto_1.jpg', 'sawatari_makoto_2.jpg', 'sawatari_makoto_3.jpg'],
     month: 1,
     day: 6,
     color: '#F77D33',

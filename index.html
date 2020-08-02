@@ -19,10 +19,14 @@
     </div>
     <!-- 背景 -->
     <canvas id="star"></canvas>
-    <!-- 总览 -->
+    <!-- 遮罩层 -->
     <div @click="inCover = 0" :class="[inCover ? '' : 'cover-hide', 'cover']">
       <div class="cover-bg"></div>
-      <div class="cover-content">
+      <!-- 总览 -->
+      <div v-if="inPic" class="cover-content cover-pic">
+        <img :src="'img/cg/' + picSrc" alt="">
+      </div>
+      <div v-else class="cover-content">
         <!-- 总览header -->
         <div class="all-header">
           <h1>Character</h1>
@@ -41,7 +45,7 @@
             <h2 v-else>{{index + 1}}月</h2>
             <ul class="all-char-items">
               <li @click="allChoose(item.id)" v-for="item in list" class="all-char-item">
-                <img v-lazy="'img/' + item.cg[0]" alt="">
+                <img v-lazy="'img/char/' + item.cg[0]" alt="">
                 <div :style="{
                   backgroundImage: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, ' + item.color + ' 80%)', 
                   textShadow: '0px 0px 3px ' + item.color
@@ -57,7 +61,7 @@
             <h2>{{key}}</h2>
             <ul class="all-char-items">
               <li @click="allChoose(item.id)" v-for="item in list" class="all-char-item">
-                <img v-lazy="'img/' + item.cg[0]" alt="">
+                <img v-lazy="'img/char/' + item.cg[0]" alt="">
                 <div :style="{
                   backgroundImage: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 10%, ' + item.color + ' 80%)', 
                   textShadow: '0px 0px 3px ' + item.color
@@ -104,20 +108,22 @@
           <!-- 人物立绘 -->
           <div class="char-cg char-cg-m-top">
             <transition-group class="char-img" :name="direction" tag="div">
-              <img v-for="item in show" :key="item.cg[0]" :src="'img/' + item.cg[0]" alt="">
+              <img v-for="item in show" :key="item.cg[0]" :src="'img/char/' + item.cg[0]" alt="">
             </transition-group>
           </div>
           <!-- 人物立绘 -->
           <div v-if="isPhone" class="char-cg char-cg-m-bottom">
             <transition-group class="char-img" :name="direction" tag="div">
-              <img v-for="item in show" :key="item.cg[0]" :src="'img/' + item.cg[0]" alt="">
+              <img v-for="item in show" :key="item.cg[0]" :src="'img/char/' + item.cg[0]" alt="">
             </transition-group>
           </div>
           <!-- 人物CG -->
           <div v-if="!isPhone" class="char-pics">
             <transition-group name="pic" tag="div" duration="1000">
               <ul v-for="item in show" :key="item.name[0]" class="char-pic">
-                <li v-if="index" v-for="(pic, index) in item.cg"><img :src="'img/' + pic" alt="" class="char-pic-item"></li>
+                <li @click="showPic(pic)" v-if="index" v-for="(pic, index) in item.cg">
+                  <img :src="'img/cg/' + pic" alt="" class="char-pic-item">
+                </li>
               </ul>
             </transition-group>
           </div>
@@ -158,7 +164,7 @@
         <ul class="slider-list">
           <li @click="choose" :data-id="index" :data-month="item.month" v-for="(item, index) in data" class="slider-item">
             <div :style="{borderColor: nowTarget == index ? item.color : ''}" class="slider-icon">
-              <img v-lazy="'img/' + item.cg[0]" :key="index" alt="">
+              <img v-lazy="'img/char/' + item.cg[0]" :key="index" alt="">
             </div>
             <p v-if="item.day == 32" :style="{background: nowTarget == index ? item.color : ''}">无</p>
             <p v-else :style="{background: nowTarget == index ? item.color : ''}">{{item.day}}日</p>

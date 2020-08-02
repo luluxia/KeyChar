@@ -70,6 +70,15 @@ img[lazy=loaded] {
 .cover-content{
   transition: transform 0.3s;
 }
+/* 遮罩图片 */
+.cover-pic{
+  height: 100%;
+}
+.cover-pic img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 /* 遮罩隐藏 */
 .cover-hide{
   opacity: 0;
@@ -262,6 +271,7 @@ img[lazy=loaded] {
   width: 6em;
   height: 6em;
   border: 1px solid #b1b1b1;
+  cursor: pointer;
 }
 .char-pic li:hover .char-pic-item{
   transform: scale(1);

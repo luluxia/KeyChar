@@ -27,6 +27,8 @@ let app = new Vue({
     touchX: 0,      //触控坐标
 
     inCover: 0,
+    inPic: 0,
+    picSrc: '',
     sort: 0,
   },
   methods: {
@@ -175,14 +177,21 @@ let app = new Vue({
 
     },
     openAll(){
+      this.inPic = 0
       this.inCover = 1
     },
     closeCover(){
+      this.inPic = 0
       this.inCover = 0
     },
     changeSort(e){
       this.sort = e
       event.stopPropagation()
+    },
+    showPic(e) {
+      this.picSrc = e
+      this.inPic = 1
+      this.inCover = 1
     }
   },
   mounted() {
