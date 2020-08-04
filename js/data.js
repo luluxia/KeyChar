@@ -323,7 +323,7 @@ let data = [
   },
   {
     name: ['相泽祐一', '相泽 祐一', 'あいざわ ゆういち', 'Aizawa Yuuichi'],
-    cg: ['aizawa_yuuichi_0.png', ' ', ' ', ' '],
+    cg: ['aizawa_yuuichi_0.png', 'aizawa_yuuichi_1.jpg', 'aizawa_yuuichi_2.png', 'aizawa_yuuichi_3.jpg'],
     month: 13,
     day: 32,
     color: '#905E38',
@@ -334,7 +334,7 @@ let data = [
   },
   {
     name: ['月宫亚由', '月宮 あゆ', 'つきみや あゆ', 'Tsukimiya Ayu'],
-    cg: ['tsukimiya_ayu_0.png', ' ', ' ', ' '],
+    cg: ['tsukimiya_ayu_0.png', 'tsukimiya_ayu_1.jpg', 'tsukimiya_ayu_2.jpg', 'tsukimiya_ayu_3.jpg'],
     month: 1,
     day: 7,
     color: '#b86735',
@@ -345,7 +345,7 @@ let data = [
   },
   {
     name: ['水濑名雪', '水瀬 名雪', 'みなせ なゆき', 'Minase Nayuki'],
-    cg: ['minase_nayuki_0.png', ' ', ' ', ' '],
+    cg: ['minase_nayuki_0.png', 'minase_nayuki_1.jpg', 'minase_akiko_1.jpg', 'minase_nayuki_2.jpg'],
     month: 12,
     day: 23,
     color: '#626BB8',
@@ -367,7 +367,7 @@ let data = [
   },
   {
     name: ['美坂栞', '美坂 栞', 'みさか しおり', 'Misaka Shiori'],
-    cg: ['misaka_shiori_0.png', ' ', ' ', ' '],
+    cg: ['misaka_shiori_0.png', 'misaka_shiori_1.jpg', 'misaka_shiori_2.jpg', 'misaka_shiori_3.jpg'],
     month: 2,
     day: 1,
     color: '#78653B',
@@ -378,7 +378,7 @@ let data = [
   },
   {
     name: ['川澄舞', '川澄 舞', 'かわすみ　まい', 'Kawasumi Mai'],
-    cg: ['kawasumi_mai_0.png', ' ', ' ', ' '],
+    cg: ['kawasumi_mai_0.png', 'kawasumi_mai_1.jpg', 'kawasumi_mai_2.jpg', 'kawasumi_mai_3.jpg'],
     month: 1,
     day: 29,
     color: '#5F6099',
@@ -389,7 +389,7 @@ let data = [
   },
   {
     name: ['美坂香里', '美坂 香里', 'みさか かおり', 'Misaka Kaori'],
-    cg: ['misaka_kaori_0.png', ' ', ' ', ' '],
+    cg: ['misaka_kaori_0.png', 'misaka_kaori_1.jpg', 'misaka_kaori_2.jpg', 'misaka_kaori_3.jpg'],
     month: 3,
     day: 1,
     color: '#AF8B64',
@@ -400,7 +400,7 @@ let data = [
   },
   {
     name: ['仓田佐祐理', '倉田 佐祐理', 'くらた さゆり', 'Kurata Sayuri'],
-    cg: ['kurata_sayuri_0.png', ' ', ' ', ' '],
+    cg: ['kurata_sayuri_0.png', 'kurata_sayuri_1.jpg', 'kurata_sayuri_2.jpg', 'kurata_sayuri_3.jpg'],
     month: 5,
     day: 5,
     color: '#726D59',
@@ -411,7 +411,7 @@ let data = [
   },
   {
     name: ['天野美汐', '天野 美汐', 'あまの みしお', 'Amano Mishio'],
-    cg: ['amano_mishio_0.png', ' ', ' ', ' '],
+    cg: ['amano_mishio_0.png', 'amano_mishio_1.jpg', 'amano_mishio_2.jpg', 'amano_mishio_3.jpg'],
     month: 12,
     day: 6,
     color: '#A85D7E',
@@ -422,7 +422,7 @@ let data = [
   },
   {
     name: ['水瀬秋子', '水瀬 秋子', 'みなせ あきこ', 'Minase Akiko'],
-    cg: ['minase_akiko_0.png', ' ', ' ', ' '],
+    cg: ['minase_akiko_0.png', 'minase_akiko_1.jpg', 'minase_akiko_2.jpg', 'minase_akiko_3.jpg'],
     month: 9,
     day: 23,
     color: '#6A62AD',
@@ -433,7 +433,7 @@ let data = [
   },
   {
     name: ['北川润', '北川 潤', 'きたがわ　じゅん', 'Kitagawa Jun'],
-    cg: ['kitagawa_jun_0.png', ' ', ' ', ' '],
+    cg: ['kitagawa_jun_0.png', 'kitagawa_jun_1.png', 'kitagawa_jun_2.png', 'kitagawa_jun_3.jpg'],
     month: 4,
     day: 18,
     color: '#EDAB5D',
