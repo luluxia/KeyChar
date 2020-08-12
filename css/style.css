@@ -384,6 +384,7 @@ img[lazy=loaded] {
 }
 .left-enter, .left-leave-to{
   opacity: 0;
+  filter: blur(2px);
 }
 .left-enter{
   transform: translate(20px, 0);
@@ -398,6 +399,7 @@ img[lazy=loaded] {
 }
 .right-enter, .right-leave-to{
   opacity: 0;
+  filter: blur(2px);
 }
 .right-enter{
   transform: translate(-20px, 0);
