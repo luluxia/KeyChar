@@ -27,6 +27,8 @@ let app = new Vue({
     touchX: 0,      //触控坐标
 
     inCover: 0,
+    inPic: 0,
+    picSrc: '',
     sort: 0,
   },
   methods: {
@@ -175,14 +177,21 @@ let app = new Vue({
 
     },
     openAll(){
+      this.inPic = 0
       this.inCover = 1
     },
     closeCover(){
+      this.inPic = 0
       this.inCover = 0
     },
     changeSort(e){
       this.sort = e
       event.stopPropagation()
+    },
+    showPic(e) {
+      this.picSrc = e
+      this.inPic = 1
+      this.inCover = 1
     }
   },
   mounted() {
@@ -201,6 +210,7 @@ let app = new Vue({
     products.forEach(product => {
       this.dataByProduct[product] = []
     })
+    //按作品排序
     this.data.forEach((item, index) => {
       item.id = index
       this.dataByMonth[item.month - 1].push(item)
@@ -208,8 +218,6 @@ let app = new Vue({
         this.dataByProduct[product].push(item)
       })
     })
-
-    //按作品排序
 
     this.middle = document.body.clientWidth / 2
     this.star()

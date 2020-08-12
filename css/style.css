@@ -70,6 +70,17 @@ img[lazy=loaded] {
 .cover-content{
   transition: transform 0.3s;
 }
+/* 遮罩图片 */
+.cover-pic{
+  display: flex;
+  height: 100%;
+}
+.cover-pic img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
 /* 遮罩隐藏 */
 .cover-hide{
   opacity: 0;
@@ -262,6 +273,7 @@ img[lazy=loaded] {
   width: 6em;
   height: 6em;
   border: 1px solid #b1b1b1;
+  cursor: pointer;
 }
 .char-pic li:hover .char-pic-item{
   transform: scale(1);
@@ -372,6 +384,7 @@ img[lazy=loaded] {
 }
 .left-enter, .left-leave-to{
   opacity: 0;
+  filter: blur(2px);
 }
 .left-enter{
   transform: translate(20px, 0);
@@ -386,6 +399,7 @@ img[lazy=loaded] {
 }
 .right-enter, .right-leave-to{
   opacity: 0;
+  filter: blur(2px);
 }
 .right-enter{
   transform: translate(-20px, 0);
