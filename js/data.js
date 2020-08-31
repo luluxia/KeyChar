@@ -11,7 +11,7 @@ let demo = [
     ]
   }
 ]
-let products = ['Kanon', 'AIR', 'CLANNAD', 'Little Busters!', 'Kud Wafter', 'Rewrite', 'Summer Pockets', 'Summer Pockets REFLECTION BLUE']
+let products = ['Kanon', 'AIR', 'CLANNAD', '智代After ~It\'s a Wonderful Life~', 'Little Busters!', 'Kud Wafter', 'Rewrite', 'Summer Pockets', 'Summer Pockets REFLECTION BLUE']
 let data = [
   {
     name: ['冈崎朋也', '岡崎 朋也', 'おかさき ともや', 'Okazaki Tomoya'],
@@ -19,7 +19,7 @@ let data = [
     month: 10,
     day: 30,
     color: '#6c6c9a',
-    from: ['CLANNAD'],
+    from: ['CLANNAD', '智代After ~It\'s a Wonderful Life~'],
     other: [
       '待补充'
     ]
@@ -63,7 +63,7 @@ let data = [
     month: 10,
     day: 14,
     color: '#3ca0b4',
-    from: ['CLANNAD'],
+    from: ['CLANNAD', '智代After ~It\'s a Wonderful Life~'],
     other: [
       '待补充'
     ]
@@ -207,6 +207,39 @@ let data = [
     day: 1,
     color: '#7F7F7F',
     from: ['CLANNAD'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['坂上鹰文', '坂上 鷹文', 'さかがみ たかふみ', 'Sakagami Takafumi'],
+    cg: ['sakagami_takafumi_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#5e5e7c',
+    from: ['智代After ~It\'s a Wonderful Life~'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['河南子', '河南子', 'かなこ', 'Katako'],
+    cg: ['kanako_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#d98259',
+    from: ['智代After ~It\'s a Wonderful Life~'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['三岛智', '三島 とも', 'みしま とも', 'Mishima Tomo'],
+    cg: ['mishima_tomo_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#c63c3f',
+    from: ['智代After ~It\'s a Wonderful Life~'],
     other: [
       '待补充'
     ]
