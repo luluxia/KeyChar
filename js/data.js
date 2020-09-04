@@ -11,7 +11,7 @@ let demo = [
     ]
   }
 ]
-let products = ['Kanon', 'AIR', 'CLANNAD', '智代After ~It\'s a Wonderful Life~', 'Little Busters!', 'Kud Wafter', 'Rewrite', 'Summer Pockets', 'Summer Pockets REFLECTION BLUE']
+let products = ['Kanon', 'AIR', 'CLANNAD', '智代After ~It\'s a Wonderful Life~', 'Little Busters!', 'Kud Wafter', 'Rewrite', 'Summer Pockets', 'Summer Pockets REFLECTION BLUE', '成神之日']
 let data = [
   {
     name: ['冈崎朋也', '岡崎 朋也', 'おかさき ともや', 'Okazaki Tomoya'],
@@ -988,6 +988,61 @@ let data = [
     day: 32,
     color: '#0645ad',
     from: ['Summer Pockets'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['ひな', 'ひな', 'Hina'],
+    cg: ['hina_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#ffadce',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['成神阳太', '成神 陽太', 'なるかみ ようた', 'Narukami Youta'],
+    cg: ['narukami_youta_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#534f4e',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['伊座并杏子', '伊座並 杏子', 'いざなみ きょうこ', 'Iginami Kyouko'],
+    cg: ['iginami_kyouko_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#44466c',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['国宝阿修罗', '国宝 阿修羅', 'こくほう あしゅら', 'Kokuhou Asyura'],
+    cg: ['kokuhou_asyura_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#d5b382',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['成神空', '成神 空', 'なるかみ そら', 'Narukami Sora'],
+    cg: ['narukami_sora_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#c33456',
+    from: ['成神之日'],
     other: [
       '待补充'
     ]
