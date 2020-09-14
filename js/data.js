@@ -247,8 +247,8 @@ let data = [
   {
     name: ['国崎往人', '国崎 往人', 'くにさき ゆきと', 'Kunisaki Yukito'],
     cg: ['kunisaki_yukito_0.png', 'kunisaki_yukito_1.jpg', 'kunisaki_yukito_2.png', 'kunisaki_yukito_3.png'],
-    month: 9,
-    day: 14,
+    month: 13,
+    day: 32,
     color: '#5A4180',
     from: ['AIR'],
     other: [
