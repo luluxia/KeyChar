@@ -1017,8 +1017,8 @@ let data = [
   {
     name: ['伊座并杏子', '伊座並 杏子', 'いざなみ きょうこ', 'Iginami Kyouko'],
     cg: ['iginami_kyouko_0.png', ' ', ' ', ' '],
-    month: 13,
-    day: 32,
+    month: 8,
+    day: 29,
     color: '#44466c',
     from: ['成神之日'],
     other: [
