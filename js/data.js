@@ -993,7 +993,7 @@ let data = [
     ]
   },
   {
-    name: ['ひな', 'ひな', 'Hina'],
+    name: ['佐藤雏', '佐藤 ひな', 'さとう ひな', 'Satou Hina'],
     cg: ['hina_0.png', ' ', ' ', ' '],
     month: 13,
     day: 32,
@@ -1047,4 +1047,81 @@ let data = [
       '待补充'
     ]
   },
+  {
+    name: ['神宫司光', '神宮司 ひかり', 'じんぐうじ ひかり', 'Zinguuzi Hikari'],
+    cg: ['zinguuzi_hikari_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#89204d',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['天愿贺子', '天願 賀子', 'てんがん かこ', 'Tengan Kako'],
+    cg: ['tengan_kako_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#994e75',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['成神时子', '成神 時子', 'なるかみ ときこ', 'Narukami Tokiko'],
+    cg: ['narukami_tokiko_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#846272',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['成神大地', '成神 大地', 'なるかみ だいち', 'Narukami Daichi'],
+    cg: ['narukami_daichi_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#4a5161',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['铃木央人', '鈴木 央人', 'すずき ひろと', 'Suzuki Hiroto'],
+    cg: ['suzuki_hiroto_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#8f95a6',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['CEO', 'しーいーおー', 'Shi-i-o'],
+    cg: ['ceo_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#6d4b5a',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['尾熊雷太', '尾熊 雷太', 'おぐま らいた', 'Oguma Raita'],
+    cg: ['oguma_raita_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#45454f',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  }
 ]
