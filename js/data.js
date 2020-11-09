@@ -11,7 +11,7 @@ let demo = [
     ]
   }
 ]
-let products = ['Kanon', 'AIR', 'CLANNAD', '智代After ~It\'s a Wonderful Life~', 'Little Busters!', 'Kud Wafter', 'Rewrite', 'Summer Pockets', 'Summer Pockets REFLECTION BLUE']
+let products = ['Kanon', 'AIR', 'CLANNAD', '智代After ~It\'s a Wonderful Life~', 'Little Busters!', 'Kud Wafter', 'Rewrite', 'Summer Pockets', 'Summer Pockets REFLECTION BLUE', '成神之日']
 let data = [
   {
     name: ['冈崎朋也', '岡崎 朋也', 'おかさき ともや', 'Okazaki Tomoya'],
@@ -247,8 +247,8 @@ let data = [
   {
     name: ['国崎往人', '国崎 往人', 'くにさき ゆきと', 'Kunisaki Yukito'],
     cg: ['kunisaki_yukito_0.png', 'kunisaki_yukito_1.jpg', 'kunisaki_yukito_2.png', 'kunisaki_yukito_3.png'],
-    month: 9,
-    day: 14,
+    month: 13,
+    day: 32,
     color: '#5A4180',
     from: ['AIR'],
     other: [
@@ -992,4 +992,136 @@ let data = [
       '待补充'
     ]
   },
+  {
+    name: ['佐藤雏', '佐藤 ひな', 'さとう ひな', 'Satou Hina'],
+    cg: ['hina_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#ffadce',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['成神阳太', '成神 陽太', 'なるかみ ようた', 'Narukami Youta'],
+    cg: ['narukami_youta_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#534f4e',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['伊座并杏子', '伊座並 杏子', 'いざなみ きょうこ', 'Iginami Kyouko'],
+    cg: ['iginami_kyouko_0.png', ' ', ' ', ' '],
+    month: 8,
+    day: 29,
+    color: '#44466c',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['国宝阿修罗', '国宝 阿修羅', 'こくほう あしゅら', 'Kokuhou Asyura'],
+    cg: ['kokuhou_asyura_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#d5b382',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['成神空', '成神 空', 'なるかみ そら', 'Narukami Sora'],
+    cg: ['narukami_sora_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#c33456',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['神宫司光', '神宮司 ひかり', 'じんぐうじ ひかり', 'Zinguuzi Hikari'],
+    cg: ['zinguuzi_hikari_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#89204d',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['天愿贺子', '天願 賀子', 'てんがん かこ', 'Tengan Kako'],
+    cg: ['tengan_kako_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#994e75',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['成神时子', '成神 時子', 'なるかみ ときこ', 'Narukami Tokiko'],
+    cg: ['narukami_tokiko_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#846272',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['成神大地', '成神 大地', 'なるかみ だいち', 'Narukami Daichi'],
+    cg: ['narukami_daichi_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#4a5161',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['铃木央人', '鈴木 央人', 'すずき ひろと', 'Suzuki Hiroto'],
+    cg: ['suzuki_hiroto_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#8f95a6',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['CEO', 'しーいーおー', 'Shi-i-o'],
+    cg: ['ceo_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#6d4b5a',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['尾熊雷太', '尾熊 雷太', 'おぐま らいた', 'Oguma Raita'],
+    cg: ['oguma_raita_0.png', ' ', ' ', ' '],
+    month: 13,
+    day: 32,
+    color: '#45454f',
+    from: ['成神之日'],
+    other: [
+      '待补充'
+    ]
+  }
 ]
