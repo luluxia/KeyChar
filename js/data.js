@@ -1123,5 +1123,93 @@ let data = [
     other: [
       '待补充'
     ]
+  },
+  {
+    name: ['藤川美亚·Mia', '藤川 みあ', 'ふじかわ みあ', 'Fujikawa Mia'],
+    cg: ['fujikawa_mia_0.png', ' ', ' ', ' '],
+    month: 4,
+    day: 2,
+    color: '#d7308f',
+    from: ['LOOPERS'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['平良明·Tyler', '平良 明', 'たいら あきら', 'Taira Akira'],
+    cg: ['taira_akira_0.png', ' ', ' ', ' '],
+    month: 7,
+    day: 21,
+    color: '#d7308f',
+    from: ['LOOPERS'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['昼田贵理子·Hilda', '昼田 貴理子', 'ひるだ きりこ', 'Hiruda Kiriko'],
+    cg: ['hiruda_kiriko_0.png', ' ', ' ', ' '],
+    month: 9,
+    day: 13,
+    color: '#d7308f',
+    from: ['LOOPERS'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['町村玲央奈·Leona', '町村 玲央奈', 'まちむら れおな', 'Machimura Reona'],
+    cg: ['machimura_reona_0.png', ' ', ' ', ' '],
+    month: 2,
+    day: 24,
+    color: '#d7308f',
+    from: ['LOOPERS'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['西门贵明·Simon', '西門 貴明', 'さいもん たかあき', 'Saimon Takaaki'],
+    cg: ['saimon_takaaki_0.png', ' ', ' ', ' '],
+    month: 3,
+    day: 5,
+    color: '#d7308f',
+    from: ['LOOPERS'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['雾岛让·Joe', '霧島 譲', 'きりしま じょう', 'Kirijima Jyoo'],
+    cg: ['kirijima_jyoo_0.png', ' ', ' ', ' '],
+    month: 6,
+    day: 6,
+    color: '#d7308f',
+    from: ['LOOPERS'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['堀井佐奈·Holly', '堀井 佐奈', 'ほりい さな', 'Horii Sana'],
+    cg: ['horii_sana_0.png', ' ', ' ', ' '],
+    month: 12,
+    day: 27,
+    color: '#d7308f',
+    from: ['LOOPERS'],
+    other: [
+      '待补充'
+    ]
+  },
+  {
+    name: ['利田美咲·Ritapon', '利田 美咲', 'りた みさき', 'Rita Misaki'],
+    cg: ['rita_misaki_0.png', ' ', ' ', ' '],
+    month: 5,
+    day: 8,
+    color: '#d7308f',
+    from: ['LOOPERS'],
+    other: [
+      '待补充'
+    ]
   }
 ]
