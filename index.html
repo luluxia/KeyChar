@@ -96,7 +96,7 @@
                   <p class="trans-name">{{item.name[2]}}</p>
                   <p class="trans-name">{{item.name[3]}}</p>
                 </div>
-                <ul class="char-info">
+                <ul v-if="item.other[0] != '待补充'" class="char-info">
                   <li v-for="info in item.other" class="trans-name">{{info}}</li>
                 </ul>
                 <ul class="char-work trans-name">
@@ -121,7 +121,7 @@
           <div v-if="!isPhone" class="char-pics">
             <transition-group name="pic" tag="div" duration="1000">
               <ul v-for="item in show" :key="item.name[0]" class="char-pic">
-                <li @click="showPic(pic)" v-if="index" v-for="(pic, index) in item.cg">
+                <li @click="showPic(pic)" v-if="index && pic != ' '" v-for="(pic, index) in item.cg">
                   <img :src="'img/cg/' + pic" alt="" class="char-pic-item">
                 </li>
               </ul>
