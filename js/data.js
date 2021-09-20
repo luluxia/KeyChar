@@ -11,7 +11,7 @@ let demo = [
     ]
   }
 ]
-let products = ['Kanon', 'AIR', 'CLANNAD', '智代After ~It\'s a Wonderful Life~', 'Little Busters!', 'Kud Wafter', 'Rewrite', 'Summer Pockets', 'Summer Pockets REFLECTION BLUE', '成神之日']
+let products = ['Kanon', 'AIR', 'CLANNAD', '智代After ~It\'s a Wonderful Life~', 'Little Busters!', 'Kud Wafter', 'Rewrite', 'Summer Pockets', 'Summer Pockets REFLECTION BLUE', '成神之日', 'LOOPERS']
 let data = [
   {
     name: ['冈崎朋也', '岡崎 朋也', 'おかさき ともや', 'Okazaki Tomoya'],
