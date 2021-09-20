@@ -96,9 +96,9 @@
                   <p class="trans-name">{{item.name[2]}}</p>
                   <p class="trans-name">{{item.name[3]}}</p>
                 </div>
-                <ul v-if="item.other[0] != '待补充'" class="char-info">
+                <!-- <ul v-if="item.other[0] != '待补充'" class="char-info">
                   <li v-for="info in item.other" class="trans-name">{{info}}</li>
-                </ul>
+                </ul> -->
                 <ul class="char-work trans-name">
                   <li v-for="info in item.from">{{info}}</li>
                 </ul>
@@ -139,9 +139,9 @@
                 <p>{{item.name[2]}}</p>
                 <p>{{item.name[3]}}</p>
               </div>
-              <ul class="char-info">
+              <!-- <ul class="char-info">
                 <li v-for="info in item.other">{{info}}</li>
-              </ul>
+              </ul> -->
               <ul class="char-work">
                 <li v-for="info in item.from">{{info}}</li>
               </ul>
